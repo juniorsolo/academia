@@ -13,3 +13,7 @@
 .active {
     background-color:#556677;
 }
+
+.ocultar {	
+	display:none;
+}
