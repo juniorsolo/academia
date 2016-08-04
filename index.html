@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="academiaApp">
 <head>
 <title>Academia Mobile</title>
  <meta charset="utf-8">
@@ -8,7 +8,8 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+<body ng-controller="academiaController">
+
     <div id="Menu" style="margin-bottom:19%;">
        <nav class="navbar navbar-inverse navbar-fixed-top">
 		 <div class="container-fluid">
@@ -35,7 +36,8 @@
 					<li class="exibirTreino"><a href="#" id="Gluteo">Glúteo</a></li>
 				</ul>
 			</li>
-			<li><a href="#" id="Historico">Histórico</a></li>
+			<li><a href="#" id="TreinoDia">Gravar Treino do Dia</a></li>
+			<li><a href="#" id="Historico">Histórico</a></li>		
 		   </ul>
 		  </div>
 		 </div>
@@ -394,7 +396,7 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>Desenvol. Frontal</td>
+				<td>Remada Alta</td>
 				<td>10</td>
 				<td>20kg</td>
 				<td>10</td>
@@ -413,13 +415,32 @@
            </div>
 		</div>
 		
-	</div>   
+	</div>
+    <div id="gravarTreino">
+	    <p class="text-primary" style="font-size: 1.5em;font-family:Courier New; text-align:center;">{{dataAtual | date :"dd/MM/yyyy"}}</p>
+	    <div class="panel panel-default" style="margin: 2%;">
+           <div class="panel-heading"> 
+		      <p class="text-primary">Qual foi seu treino de Hoje???</p>
+			</div>
+           <div class="panel-body">
+			   <div ng-include="'teste.html'"></div>
+		       <select ng-model="cate" class="form-control">
+				  <option ng-repeat="categoria in categorias" value="{{categoria.nome}}">{{categoria.nome}}</options>
+			   </select>		   
+		   </div>
+        </div>
+        
+    </div>	
    <div id="footer">
         
    </div>
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
-<script src="js/jquery-2.2.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery/jquery-2.2.3.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<!-- Importando biblioteca angular, controller e etc..-->
+<script src="js/angularj/angular.js"></script>
+<script src="js/module/app.js"></script>
+<script src="js/controller/academiaController.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>	

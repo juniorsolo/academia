@@ -18,6 +18,9 @@
 	display:none;
 }
 
+p{
+font-family:verdana;	
+}
 .exibirTreino {	
 		margin-bottom:2%;
 		margin-left:8%;
