@@ -1,7 +1,12 @@
 $(document).ready(function(){ 
+    var fechaMenu = function(){
+	   $("#navbar").removeClass('in'); 
+	};
+    
    $("#Biceps").click( function(){
       //Exibindo...
 	  $("#BICEPS").fadeIn('slow');
+	  fechaMenu();
 	  
 	  //Ocultando outros
 	  $("#TRICEPS").fadeOut('fast');
@@ -16,6 +21,7 @@ $(document).ready(function(){
    $("#Triceps").click(function(){
 	   // Exibindo...
 	  $("#TRICEPS").fadeIn('slow');
+	  fechaMenu();
 	  
 	   //Ocultando outros
 	  $("#BICEPS").fadeOut('fast');
@@ -30,6 +36,7 @@ $(document).ready(function(){
    $("#Costas").click(function(){
 	   // Exibindo...
 	  $("#COSTAS").fadeIn('slow');
+	  fechaMenu();
 	  
 	   //Ocultando outros
 	  $("#BICEPS").fadeOut('fast');
@@ -44,6 +51,7 @@ $(document).ready(function(){
    $("#Peitoral").click(function(){
 	   // Exibindo...
 	  $("#PEITORAL").fadeIn('slow');
+	  fechaMenu();
 	  
 	   //Ocultando outros
 	  $("#BICEPS").fadeOut('fast');
@@ -58,6 +66,7 @@ $(document).ready(function(){
    $("#Pernas").click(function(){
 	   // Exibindo...
 	  $("#PERNAS").fadeIn('slow');
+	  fechaMenu();
 	  
 	   //Ocultando outros
 	  $("#BICEPS").fadeOut('fast');
@@ -72,6 +81,7 @@ $(document).ready(function(){
    $("#Trapezio").click(function(){
 	   // Exibindo...
 	  $("#TRAPEZIO").fadeIn('slow');
+	  fechaMenu();
 	  
 	   //Ocultando outros
 	  $("#BICEPS").fadeOut('fast');
@@ -86,6 +96,7 @@ $(document).ready(function(){
    $("#Deltoide").click(function(){
 	   // Exibindo...
 	  $("#DELTOIDE").fadeIn('slow');
+	  fechaMenu();
 	  
 	   //Ocultando outros
 	  $("#BICEPS").fadeOut('fast');
@@ -100,6 +111,7 @@ $(document).ready(function(){
    $("#Gluteo").click(function(){
 	   // Exibindo...
 	  $("#GLUTEO").fadeIn('slow');
+	  fechaMenu();
 	  
 	   //Ocultando outros
 	  $("#BICEPS").fadeOut('fast');
