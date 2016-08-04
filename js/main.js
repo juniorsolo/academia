@@ -7,7 +7,10 @@ $(document).ready(function(){
    $("#exibirTreino").click(function(){
 	   $("#menuExibirTreino").toggleClass('ocultar');   
    });
-	
+   $("#TreinoDia").click(function(){
+	   $("#gravarTreino").toggleClass('ocultar');
+	   fechaMenu();
+   });
    $("#Biceps").click( function(){
       //Exibindo...
 	  $("#BICEPS").fadeIn('slow');

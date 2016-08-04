@@ -416,7 +416,7 @@
 		</div>
 		
 	</div>
-    <div id="gravarTreino">
+    <div id="gravarTreino" class="ocultar">
 	    <p class="text-primary" style="font-size: 1.5em;font-family:Courier New; text-align:center;">{{dataAtual | date :"dd/MM/yyyy"}}</p>
 	    <div class="panel panel-default" style="margin: 2%;">
            <div class="panel-heading"> 
@@ -426,7 +426,10 @@
 			   <div ng-include="'teste.html'"></div>
 		       <select ng-model="cate" class="form-control">
 				  <option ng-repeat="categoria in categorias" value="{{categoria.nome}}">{{categoria.nome}}</options>
-			   </select>		   
+			   </select>
+               <div>
+			       <button type="button" class="btn btn-info" style="margin:10px;">Adicionar</button>
+               </div>			   
 		   </div>
         </div>
         
