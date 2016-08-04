@@ -1,8 +1,13 @@
 $(document).ready(function(){ 
     var fechaMenu = function(){
-	   $("#navbar").removeClass('in'); 
+	   $("#navbar").removeClass('in');
+	   $("#menuExibirTreino").addClass('ocultar');   
 	};
-    
+	
+   $("#exibirTreino").click(function(){
+	   $("#menuExibirTreino").toggleClass('ocultar');   
+   });
+	
    $("#Biceps").click( function(){
       //Exibindo...
 	  $("#BICEPS").fadeIn('slow');
