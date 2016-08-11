@@ -7,9 +7,6 @@
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
-<!-- JqueryUI CSS-->
-<link href="css/jqueryUI/jquery-ui.min.css">
-<link href="css/jqueryUI/jquery-ui.theme.min.css">
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body ng-controller="academiaController">
@@ -424,18 +421,21 @@
 	    <p class="text-primary" style="font-size: 1.5em;font-family:Courier New; text-align:center;">{{dataAtual | date :"dd/MM/yyyy"}}</p>
 	    <div class="panel panel-default" style="margin: 2%;">
            <div class="panel-heading" > 
-		        <p>Dia do treino: <input type="date" id="dataTreino"></p>
-                <hr></hr>
-                <p ng-if="treinosDoDia != null">{{treinosDoDia}}</p>				
+		        <p>Data do treino: <input type="date" id="dataTreino"></p> 
 			</div>
-           <div class="panel-body">		        
+           <div class="panel-body" style="margin-top:1px;">
+               <div>		   
+				   <ul class="list-group" ng-repeat="treino in treinosDoDia" ng-show="treinosDoDia.length > 0">
+						  <li class="list-group-item list-group-item-info" style="float:left;clear:top;">{{treino}}</li>
+					</ul>
+                </div>				
 			   <div ng-include="'teste.html'"></div>
 		       <select ng-model="categoriaSelecionada" class="form-control">
-				  <option ng-repeat="categoria in categorias" value="{{categoria.nome}}">{{categoria.nome}}</options>
+				  <option ng-repeat="categoria in categorias" value="{{categoria}}">{{categoria}}</options>
 			   </select>
                <div style="text-align:center;">
-			       <button type="button" class="btn btn-info " style="margin:10px;" ng-click="addTreino()">Adicionar</button>
-				   <button type="button" class="btn btn-info " style="margin:10px;" ng-click="limparTreino()">Limpar</button>
+			       <button type="button" class="btn btn-info " style="margin:10px; width:40%" ng-click="addTreino()">Adicionar</button>
+				   <button type="button" class="btn btn-info " style="margin:10px; width:40%" ng-click="limparTreino()">Limpar</button>
                </div>			   
 		   </div>
         </div>
@@ -447,9 +447,6 @@
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery/jquery-2.2.3.min.js"></script>
 <script src="js/bootstrap/bootstrap.min.js"></script>
-
-<!-- lib do jqueryUI  -->
-<script src="js/jqueryUI/jquery-ui.min.js"></script>
 
 <!-- Importando biblioteca angular, controller e etc..-->
 <script src="js/angularj/angular.js"></script>

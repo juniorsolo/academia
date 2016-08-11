@@ -1,6 +1,6 @@
 angular.module("academiaApp").controller('academiaController', function($scope){
-   $scope.categorias=[{nome:"BICEPS"},{nome:"COSTAS"},{nome:"TRICEPS"},{nome:"PEITORAL"},{nome:"PERNAS"},{nome:"DELTOIDE"},{nome:"TRAPEZIO"},{nome:"GLUTEO"} ];
-   //$scope.categorias=[{"BICEPS"},{"COSTAS"},{"TRICEPS"},{"PEITORAL"},{"PERNAS"},{"DELTOIDE"},{"TRAPEZIO"},{"GLUTEO"}];
+   //$scope.categorias=[{nome:"BICEPS"},{nome:"COSTAS"},{nome:"TRICEPS"},{nome:"PEITORAL"},{nome:"PERNAS"},{nome:"DELTOIDE"},{nome:"TRAPEZIO"},{nome:"GLUTEO"} ];
+   $scope.categorias=["BICEPS","COSTAS","TRICEPS","PEITORAL","PERNAS","DELTOIDE","TRAPEZIO","GLUTEO"];
    $scope.exercicios=[{nome:"Rosca Direta",categoria:"BICEPS"},
 	                 {nome:"Rosca Concentrada",categoria:"BICEPS"},
 					 {nome:"Rosca Alternada",categoria:"BICEPS"},
