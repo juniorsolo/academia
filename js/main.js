@@ -1,4 +1,5 @@
 $(document).ready(function(){ 
+
     var fechaMenu = function(){
 	   $("#navbar").removeClass('in');
 	   $("#menuExibirTreino").addClass('ocultar');   

@@ -28,5 +28,14 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 					 {nome:"Elevação Posterior",categoria:"DELTOIDE"},
 					 {nome:"Remada Alta",categoria:"TRAPEZIO"}	 
 					 ];
+	$scope.treinosDoDia=[];
     $scope.dataAtual = new Date();
+	$scope.categoriaSelecionada = "";
+	$scope.addTreino = function(){
+		$scope.treinosDoDia.push($scope.categoriaSelecionada);
+	}
+	
+	$scope.limparTreino = function(){
+		$scope.treinosDoDia=[];
+	}
 }); 

@@ -6,6 +6,10 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- JqueryUI CSS-->
+<link href="css/jqueryUI/jquery-ui.min.css">
+<link href="css/jqueryUI/jquery-ui.theme.min.css">
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body ng-controller="academiaController">
@@ -416,19 +420,22 @@
 		</div>
 		
 	</div>
-    <div id="gravarTreino" class="ocultar">
+    <div id="gravarTreino">
 	    <p class="text-primary" style="font-size: 1.5em;font-family:Courier New; text-align:center;">{{dataAtual | date :"dd/MM/yyyy"}}</p>
 	    <div class="panel panel-default" style="margin: 2%;">
-           <div class="panel-heading"> 
-		      <p class="text-primary">Qual foi seu treino de Hoje???</p>
+           <div class="panel-heading" > 
+		        <p>Dia do treino: <input type="date" id="dataTreino"></p>
+                <hr></hr>
+                <p ng-if="treinosDoDia != null">{{treinosDoDia}}</p>				
 			</div>
-           <div class="panel-body">
+           <div class="panel-body">		        
 			   <div ng-include="'teste.html'"></div>
-		       <select ng-model="cate" class="form-control">
+		       <select ng-model="categoriaSelecionada" class="form-control">
 				  <option ng-repeat="categoria in categorias" value="{{categoria.nome}}">{{categoria.nome}}</options>
 			   </select>
-               <div>
-			       <button type="button" class="btn btn-info" style="margin:10px;">Adicionar</button>
+               <div style="text-align:center;">
+			       <button type="button" class="btn btn-info " style="margin:10px;" ng-click="addTreino()">Adicionar</button>
+				   <button type="button" class="btn btn-info " style="margin:10px;" ng-click="limparTreino()">Limpar</button>
                </div>			   
 		   </div>
         </div>
@@ -440,6 +447,10 @@
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery/jquery-2.2.3.min.js"></script>
 <script src="js/bootstrap/bootstrap.min.js"></script>
+
+<!-- lib do jqueryUI  -->
+<script src="js/jqueryUI/jquery-ui.min.js"></script>
+
 <!-- Importando biblioteca angular, controller e etc..-->
 <script src="js/angularj/angular.js"></script>
 <script src="js/module/app.js"></script>
