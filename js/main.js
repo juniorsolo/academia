@@ -9,6 +9,16 @@ $(document).ready(function(){
    });
    $("#TreinoDia").click(function(){
 	   $("#gravarTreino").toggleClass('ocultar');
+	   
+	  $("#BICEPS").fadeOut('fast');
+	  $("#TRICEPS").fadeOut('fast');
+	  $("#COSTAS").fadeOut('fast');
+	  $("#PEITORAL").fadeOut('fast');
+	  $("#PERNAS").fadeOut('fast');
+	  $("#TRAPEZIO").fadeOut('fast');
+	  $("#DELTOIDE").fadeOut('fast');
+	  $("#GLUTEO").fadeOut('fast');
+	   
 	   fechaMenu();
    });
    $("#Biceps").click( function(){
@@ -24,7 +34,7 @@ $(document).ready(function(){
 	  $("#TRAPEZIO").fadeOut('fast');
 	  $("#DELTOIDE").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast');
-	  $("#gravarTreino").fadeOut('fast');
+	  $("#gravarTreino").addClass('ocultar');
    });
    
    $("#Triceps").click(function(){
@@ -40,7 +50,7 @@ $(document).ready(function(){
       $("#TRAPEZIO").fadeOut('fast');
 	  $("#DELTOIDE").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast');
-      $("#gravarTreino").fadeOut('fast');	  
+      $("#gravarTreino").addClass('ocultar');	  
    });
    
    $("#Costas").click(function(){
@@ -56,7 +66,7 @@ $(document).ready(function(){
 	  $("#TRAPEZIO").fadeOut('fast');
 	  $("#DELTOIDE").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast');
-	  $("#gravarTreino").fadeOut('fast');
+	  $("#gravarTreino").addClass('ocultar');
    });
    
    $("#Peitoral").click(function(){
@@ -72,7 +82,7 @@ $(document).ready(function(){
 	  $("#TRAPEZIO").fadeOut('fast');
 	  $("#DELTOIDE").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast');
-	  $("#gravarTreino").fadeOut('fast');
+	  $("#gravarTreino").addClass('ocultar');
    });
    
    $("#Pernas").click(function(){
@@ -88,7 +98,7 @@ $(document).ready(function(){
 	  $("#TRAPEZIO").fadeOut('fast');
 	  $("#DELTOIDE").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast');
-      $("#gravarTreino").fadeOut('fast');	  
+      $("#gravarTreino").addClass('ocultar');	  
    });
    
    $("#Trapezio").click(function(){
@@ -104,7 +114,7 @@ $(document).ready(function(){
 	  $("#PERNAS").fadeOut('fast');
 	  $("#DELTOIDE").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast'); 
-	  $("#gravarTreino").fadeOut('fast');
+	  $("#gravarTreino").addClass('ocultar');
    });
    
    $("#Deltoide").click(function(){
@@ -120,7 +130,7 @@ $(document).ready(function(){
 	  $("#PERNAS").fadeOut('fast');
 	  $("#TRAPEZIO").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast');
-      $("#gravarTreino").fadeOut('fast');	  
+      $("#gravarTreino").addClass('ocultar');	  
    });
    
    $("#Gluteo").click(function(){
@@ -136,7 +146,7 @@ $(document).ready(function(){
 	  $("#PERNAS").fadeOut('fast');
 	  $("#TRAPEZIO").fadeOut('fast');
 	  $("#DELTOIDE").fadeOut('fast');
-      $("#gravarTreino").fadeOut('fast');	  
+      $("#gravarTreino").addClass('ocultar');	  
    });
    
 }); 
