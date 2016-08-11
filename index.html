@@ -423,17 +423,19 @@
            <div class="panel-heading" > 
 		        <p>Data do treino: <input type="date" id="dataTreino"></p> 
 			</div>
-           <div class="panel-body" style="margin-top:1px;">
+           <div class="panel-body" style="margin-top:1%;">
                <div>		   
 				   <ul class="list-group" ng-repeat="treino in treinosDoDia" ng-show="treinosDoDia.length > 0">
-						  <li class="list-group-item list-group-item-info" style="float:left;clear:top;">{{treino}}</li>
+						  <li class="list-group-item list-group-item-info" style="float:left;clear:top;margin-bottom:10%;">{{treino}}</li>
 					</ul>
                 </div>				
 			   <div ng-include="'teste.html'"></div>
-		       <select ng-model="categoriaSelecionada" class="form-control">
-				  <option ng-repeat="categoria in categorias" value="{{categoria}}">{{categoria}}</options>
-			   </select>
-               <div style="text-align:center;">
+			   <div>
+				   <select ng-model="categoriaSelecionada" class="form-control">
+					  <option ng-repeat="categoria in categorias" value="{{categoria}}">{{categoria}}</options>
+				   </select>
+			   </div>
+               <div style="text-align:center">
 			       <button type="button" class="btn btn-info " style="margin:10px; width:40%" ng-click="addTreino()">Adicionar</button>
 				   <button type="button" class="btn btn-info " style="margin:10px; width:40%" ng-click="limparTreino()">Limpar</button>
                </div>			   
