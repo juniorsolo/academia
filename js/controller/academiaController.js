@@ -37,6 +37,7 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 		if($scope.categoriaSelecionada != ""){
 		  $scope.treinosDoDia.push($scope.categoriaSelecionada);
 		  $scope.categorias = removeItemOfArray($scope.categorias, $scope.categoriaSelecionada);
+		  $scope.categoriaSelecionada = "";
         } 		
 	};
 	$scope.removerTreino = function(treino){
@@ -44,10 +45,7 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 		$scope.categorias.push(treino);
 		$scope.categorias.sort();
 	};
-	$scope.limparTreino = function(){
-		$scope.treinosDoDia=[];
-		$scope.categorias= carregarCategorias();
-	};
+
 	
     var removeItemOfArray= function(array , itemRemover){	    
 			var index = array.indexOf(itemRemover);

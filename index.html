@@ -418,18 +418,20 @@
 		
 	</div>
     <div id="gravarTreino">
-	    <p class="text-primary" style="font-size: 1.5em;font-family:Courier New; text-align:center;">{{dataAtual | date :"dd/MM/yyyy"}}</p>
 	    <div class="panel panel-default" style="margin:1%;">
            <div class="panel-heading" > 
 		        <p>Data do treino: <input type="date" id="dataTreino"></p> 
 			</div>
            <div class="panel-body" style="margin:1%; padding:1%;">
-               <div>		   
-				   <ul class="list-group" ng-repeat="treino in treinosDoDia" ng-show="treinosDoDia.length > 0">
+               <div>
+                   <div class="alert alert-info" ng-if="treinosDoDia.length > 0">
+                             Para <strong>remover</strong> aperte algum item.
+                   </div>			   
+				   <ul class="list-group" ng-repeat="treino in treinosDoDia" ng-show="treinosDoDia.length > 0">	          
 						  <li class="list-group-item list-group-item-info" style="float:left;clear:top;margin:1%;" ng-click="removerTreino(treino)">{{treino}}</li>
 					</ul>
                 </div>				
-			   <div ng-include="'teste.html'"></div>
+			   <!--<div ng-include="'teste.html'"></div>-->
 			   <div>
 				   <select ng-model="categoriaSelecionada" class="form-control">
 					  <option ng-repeat="categoria in categorias" value="{{categoria}}">{{categoria}}</options>
@@ -437,7 +439,7 @@
 			   </div>
                <div style="text-align:center">
 			       <button type="button" class="btn btn-info " style="margin:10px; width:40%" ng-click="addTreino()">Adicionar</button>
-				   <button type="button" class="btn btn-info " style="margin:10px; width:40%" ng-click="limparTreino()">Limpar</button>
+				   <button type="button" class="btn btn-success " style="margin:10px; width:40%" >Salvar</button>
                </div>			   
 		   </div>
         </div>
