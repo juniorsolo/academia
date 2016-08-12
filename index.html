@@ -419,14 +419,14 @@
 	</div>
     <div id="gravarTreino">
 	    <p class="text-primary" style="font-size: 1.5em;font-family:Courier New; text-align:center;">{{dataAtual | date :"dd/MM/yyyy"}}</p>
-	    <div class="panel panel-default" style="margin: 2%;">
+	    <div class="panel panel-default" style="margin:1%;">
            <div class="panel-heading" > 
 		        <p>Data do treino: <input type="date" id="dataTreino"></p> 
 			</div>
-           <div class="panel-body" style="margin-top:1%;">
+           <div class="panel-body" style="margin:1%; padding:1%;">
                <div>		   
 				   <ul class="list-group" ng-repeat="treino in treinosDoDia" ng-show="treinosDoDia.length > 0">
-						  <li class="list-group-item list-group-item-info" style="float:left;clear:top;margin:1%;">{{treino}}</li>
+						  <li class="list-group-item list-group-item-info" style="float:left;clear:top;margin:1%;" ng-click="removerTreino(treino)">{{treino}}</li>
 					</ul>
                 </div>				
 			   <div ng-include="'teste.html'"></div>

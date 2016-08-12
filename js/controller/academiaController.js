@@ -1,6 +1,7 @@
 angular.module("academiaApp").controller('academiaController', function($scope){
    var carregarCategorias = function(){ return ["BICEPS","COSTAS","TRICEPS","PEITORAL","PERNAS","DELTOIDE","TRAPEZIO","GLUTEO"]};
    $scope.categorias = carregarCategorias();
+   $scope.categorias.sort();
    $scope.exercicios=[{nome:"Rosca Direta",categoria:"BICEPS"},
 	                 {nome:"Rosca Concentrada",categoria:"BICEPS"},
 					 {nome:"Rosca Alternada",categoria:"BICEPS"},
@@ -33,15 +34,20 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 	$scope.categoriaSelecionada = "";
 	
 	$scope.addTreino = function(){
-		$scope.treinosDoDia.push($scope.categoriaSelecionada);
-		$scope.categorias = removeItemOfArray($scope.categorias, $scope.categoriaSelecionada);
-         		
-	}
-	
+		if($scope.categoriaSelecionada != ""){
+		  $scope.treinosDoDia.push($scope.categoriaSelecionada);
+		  $scope.categorias = removeItemOfArray($scope.categorias, $scope.categoriaSelecionada);
+        } 		
+	};
+	$scope.removerTreino = function(treino){
+		$scope.treinosDoDia = removeItemOfArray($scope.treinosDoDia, treino)
+		$scope.categorias.push(treino);
+		$scope.categorias.sort();
+	};
 	$scope.limparTreino = function(){
 		$scope.treinosDoDia=[];
 		$scope.categorias= carregarCategorias();
-	}
+	};
 	
     var removeItemOfArray= function(array , itemRemover){	    
 			var index = array.indexOf(itemRemover);
