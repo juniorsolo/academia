@@ -46,7 +46,9 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 		$scope.categorias.sort();
 	};
 
-	
+	$scope.salvarTreino = function(){
+		
+	};
     var removeItemOfArray= function(array , itemRemover){	    
 			var index = array.indexOf(itemRemover);
 			if(index != -1){
