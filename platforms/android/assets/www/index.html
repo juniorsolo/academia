@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html ng-app="academiaApp">
+<head>
+<title>Academia Mobile</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body ng-controller="academiaController">
+
+    <div id="Menu" style="margin-bottom:19%;">
+       <nav class="navbar navbar-inverse navbar-fixed-top">
+		 <div class="container-fluid">
+		  <div class="navbar-header">
+		   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		   </button>
+		   <a class="navbar-brand" href="#"> Academia - Force Fit</a>
+		  </div> 
+		  <div id="navbar" class="navbar-collapse collapse">
+		   <ul class="nav navbar-nav navbar-right">
+		    <li><a href="#" id="exibirTreino">Exibir Treino</a>
+			    <ul id="menuExibirTreino"class="navbar-nav ocultar ">
+					<li class="exibirTreino"><a href="#" id="Biceps">Bíceps</a></li>
+					<li class="exibirTreino"><a href="#" id="Triceps">Tríceps</a></li>
+					<li class="exibirTreino"><a href="#" id="Costas">Costas</a></li>
+					<li class="exibirTreino"><a href="#" id="Peitoral">Peitoral</a></li>
+					<li class="exibirTreino"><a href="#" id="Pernas">Pernas</a></li>
+					<li class="exibirTreino"><a href="#" id="Trapezio">Trapézio</a></li>
+					<li class="exibirTreino"><a href="#" id="Deltoide">Deltóide</a></li>
+					<li class="exibirTreino"><a href="#" id="Gluteo">Glúteo</a></li>
+				</ul>
+			</li>
+			<li><a href="#" id="TreinoDia">Gravar Treino</a></li>
+			<li><a href="#" id="Historico">Histórico</a></li>		
+		   </ul>
+		  </div>
+		 </div>
+		</nav>    
+	</div>
+	<div id="body">
+	    <div class="container ocultar" id="BICEPS">
+		  <h4>Bicéps</h4>
+		  <table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Exercicio</th>
+				<th>R1</th>
+				<th>P1</th>
+				<th>R2</th>
+				<th>P2</th>
+				<th>R3</th>
+				<th>P3</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Rosca Concentrada</td>
+				<td>12</td>
+				<td>12kg</td>
+				<td>10</td>
+				<td>10kg</td>
+				<td>6</td>
+				<td>8kg</td>
+			  </tr>
+              <tr>
+				<td>Rosca Direta</td>
+				<td>12</td>
+				<td>12kg</td>
+				<td>10</td>
+				<td>10kg</td>
+				<td>6</td>
+				<td>8kg</td>
+			  </tr>
+              <tr>
+				<td>Rosca Alternada</td>
+				<td>Max</td>
+				<td>12kg</td>
+				<td>Max</td>
+				<td>10kg</td>
+				<td>Max</td>
+				<td>8kg</td>
+			  </tr>				  
+			</tbody>
+		  </table>
+		</div>
+		
+		<div class="container ocultar" id="TRICEPS">
+		  <h4>Triceps</h4>
+		  <table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Exercicio</th>
+				<th>R1</th>
+				<th>P1</th>
+				<th>R2</th>
+				<th>P2</th>
+				<th>R3</th>
+				<th>P3</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Pulley</td>
+				<td>12</td>
+				<td>12kg</td>
+				<td>12</td>
+				<td>10kg</td>
+				<td>12</td>
+				<td>8kg</td>
+			  </tr>
+              <tr>
+				<td>Pulley Sup.</td>
+				<td>12</td>
+				<td>12kg</td>
+				<td>10</td>
+				<td>10kg</td>
+				<td>6</td>
+				<td>8kg</td>
+			  </tr>
+              <tr>
+				<td>Pulley corda</td>
+				<td>10</td>
+				<td>20kg</td>
+				<td>10</td>
+				<td>15kg</td>
+				<td>10</td>
+				<td>15kg</td>
+			  </tr>				  
+			</tbody>
+		  </table>
+		</div>		
+		<div class="container ocultar" id="COSTAS">
+		  <h4>Costas</h4>
+		  <table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Exercicio</th>
+				<th>R1</th>
+				<th>P1</th>
+				<th>R2</th>
+				<th>P2</th>
+				<th>R3</th>
+				<th>P3</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Pulley Frontal</td>
+				<td>10</td>
+				<td>25kg</td>
+				<td>10</td>
+				<td>30kg</td>
+				<td>10</td>
+				<td>35kg</td>
+			  </tr>
+              <tr>
+				<td>Remada Fech.</td>
+				<td>15</td>
+				<td>15kg</td>
+				<td>15</td>
+				<td>20kg</td>
+				<td>15</td>
+				<td>25kg</td>
+			  </tr>
+              <tr>
+				<td>Cavalo</td>
+				<td>10</td>
+				<td>15kg</td>
+				<td>10</td>
+				<td>20kg</td>
+				<td>10</td>
+				<td>25kg</td>
+			  </tr>
+              <tr>
+				<td>Pundow</td>
+				<td>10</td>
+				<td>15kg</td>
+				<td>10</td>
+				<td>20kg</td>
+				<td>10</td>
+				<td>20kg</td>
+			  </tr>			  
+			</tbody>
+		  </table>
+		</div>
+		
+		<div class="container ocultar" id="PEITORAL">
+		  <h4>Peitoral</h4>
+		  <table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Exercicio</th>
+				<th>R1</th>
+				<th>P1</th>
+				<th>R2</th>
+				<th>P2</th>
+				<th>R3</th>
+				<th>P3</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Supino Reto</td>
+				<td>12</td>
+				<td>20kg</td>
+				<td>10</td>
+				<td>25kg</td>
+				<td>6</td>
+				<td>30kg</td>
+			  </tr>
+              <tr>
+				<td>supino inclinado</td>
+				<td>12</td>
+				<td>12kg</td>
+				<td>10</td>
+				<td>10kg</td>
+				<td>6</td>
+				<td>8kg</td>
+			  </tr>
+              <tr>
+				<td>Cruxifixo inclinado</td>
+				<td>10</td>
+				<td>8kg</td>
+				<td>10</td>
+				<td>10kg</td>
+				<td>10</td>
+				<td>12kg</td>
+			  </tr>
+              <tr>
+				<td>Supino Declinado</td>
+				<td>8</td>
+				<td>15kg</td>
+				<td>8</td>
+				<td>20kg</td>
+				<td>8</td>
+				<td>25kg</td>
+			  </tr>				  
+			</tbody>
+		  </table>
+		</div>
+		<div class="container ocultar" id="PERNAS">
+		  <h4>Pernas</h4>
+		  <table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Exercicio</th>
+				<th>R1</th>
+				<th>P1</th>
+				<th>R2</th>
+				<th>P2</th>
+				<th>R3</th>
+				<th>P3</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Legg Press</td>
+				<td>24</td>
+				<td>80kg</td>
+				<td>24</td>
+				<td>100kg</td>
+				<td>24</td>
+				<td>100kg</td>
+			  </tr>
+              <tr>
+				<td>Avanço</td>
+				<td>10</td>
+				<td>20kg</td>
+				<td>10</td>
+				<td>20kg</td>
+				<td>10</td>
+				<td>20kg</td>
+			  </tr>
+              <tr>
+				<td>Cadeira Extensora</td>
+				<td>Max</td>
+				<td>15kg</td>
+				<td>Max</td>
+				<td>20kg</td>
+				<td>Max</td>
+				<td>20kg</td>
+			  </tr>
+              <tr>
+				<td>Cadeira Flexora</td>
+				<td>12</td>
+				<td>15kg</td>
+				<td>12</td>
+				<td>20kg</td>
+				<td>12</td>
+				<td>20kg</td>
+			  </tr>
+              <tr>
+				<td>Cadeira Adutora</td>
+				<td>Max</td>
+				<td>30kg</td>
+				<td>Max</td>
+				<td>40kg</td>
+				<td>Max</td>
+				<td>40kg</td>
+			  </tr>
+              <tr>
+				<td>Cadeira Abdutora</td>
+				<td>Max</td>
+				<td>30kg</td>
+				<td>Max</td>
+				<td>40kg</td>
+				<td>Max</td>
+				<td>40kg</td>
+			  </tr>			  
+			</tbody>
+		  </table>
+		</div>
+		<div class="container ocultar" id="DELTOIDE">
+		  <h4>Deltoide</h4>
+		  <table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Exercicio</th>
+				<th>R1</th>
+				<th>P1</th>
+				<th>R2</th>
+				<th>P2</th>
+				<th>R3</th>
+				<th>P3</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Desenvol. Frontal</td>
+				<td>10</td>
+				<td>8kg</td>
+				<td>10</td>
+				<td>10kg</td>
+				<td>10</td>
+				<td>10kg</td>
+			  </tr>
+              <tr>
+				<td>Arnold Press. + Desenv.</td>
+				<td>10</td>
+				<td>8kg</td>
+				<td>10</td>
+				<td>10kg</td>
+				<td>10</td>
+				<td>10kg</td>
+			  </tr>
+              <tr>
+				<td>Elevação Frontal</td>
+				<td>10</td>
+				<td>8kg</td>
+				<td>10</td>
+				<td>8kg</td>
+				<td>10</td>
+				<td>10kg</td>
+			  </tr>
+              <tr>
+				<td>Elevação Lateral</td>
+				<td>10</td>
+				<td>8kg</td>
+				<td>10</td>
+				<td>8kg</td>
+				<td>10</td>
+				<td>10kg</td>
+			  </tr>
+              <tr>
+				<td>Elevação Posterior</td>
+				<td>10</td>
+				<td>8kg</td>
+				<td>10</td>
+				<td>8kg</td>
+				<td>10</td>
+				<td>10kg</td>
+			  </tr>			  
+			</tbody>
+		  </table>
+		</div>
+		
+		<div class="container ocultar" id="TRAPEZIO">
+		  <h4>Trapezio</h4>
+		  <table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Exercicio</th>
+				<th>R1</th>
+				<th>P1</th>
+				<th>R2</th>
+				<th>P2</th>
+				<th>R3</th>
+				<th>P3</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Remada Alta</td>
+				<td>10</td>
+				<td>20kg</td>
+				<td>10</td>
+				<td>20kg</td>
+				<td>10</td>
+				<td>25kg</td>
+			  </tr>        		  
+			</tbody>
+		  </table>
+		</div>
+		
+		<div class="container ocultar" id="GLUTEO">
+		  <h4>Gluteo</h4>
+		   <div class="alert alert-warning">
+            <strong>Ooops!</strong> Não existe séries cadastradas para esta categoria...
+           </div>
+		</div>
+		
+	</div>
+    <div id="gravarTreino">
+	    <div class="panel panel-default" style="margin:1%;">
+           <div class="panel-heading" > 
+		        <p>Data do treino: <input type="date" id="dataTreino"></p> 
+			</div>
+           <div class="panel-body" style="margin:1%; padding:1%;">
+               <div>
+                   <div id="infoRemoveTreino"class="alert alert-info" ng-if="treinosDoDia.length > 0">
+                             Toque em algum item para <strong>remover</strong>.
+                   </div>			   
+				   <ul class="list-group" ng-repeat="treino in treinosDoDia" ng-show="treinosDoDia.length > 0">	          
+						  <li class="list-group-item list-group-item-info" style="float:left;clear:top;margin:1%;" ng-click="removerTreino(treino)">{{treino}}</li>
+					</ul>
+                </div>				
+			   <!--<div ng-include="'teste.html'"></div>-->
+			   <div>
+				   <select ng-model="categoriaSelecionada" class="form-control">
+					  <option ng-repeat="categoria in categorias" value="{{categoria}}">{{categoria}}</options>
+				   </select>
+			   </div>
+               <div style="text-align:center">
+			       <button id="addTreino" type="button" class="btn btn-info " style="margin:10px; width:40%" ng-click="addTreino()" ng-disabled="categoriaSelecionada.length < 2">Adicionar</button>
+				   <button type="button" class="btn btn-success " style="margin:10px; width:40%" data-toggle="modal" data-target="#myModal" ng-disabled="treinosDoDia.length <= 0">Salvar</button>
+				   
+				   <!-- Modal -->
+					<div id="myModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+
+						<!-- Modal content-->
+						<div class="modal-content">
+						  <div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						  </div>
+						  <div class="modal-body">
+							<p><strong>Dados salvo com sucesso!</strong></p>
+						  </div>
+						  <div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+						  </div>
+						</div>
+
+					  </div>
+					</div>
+               </div>			   
+		   </div>
+        </div>
+        
+    </div>	
+   <div id="footer">
+        
+   </div>
+<!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
+<script src="js/jquery/jquery-2.2.3.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+
+<!-- Importando biblioteca angular, controller e etc..-->
+<script src="js/angularj/angular.js"></script>
+<script src="js/module/app.js"></script>
+<script src="js/controller/academiaController.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>	
