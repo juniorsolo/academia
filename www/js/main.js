@@ -7,8 +7,23 @@ $(document).ready(function(){
 	   $("#menuExibirExercicio").addClass('ocultar');   
 	};
 	
+	//Fecha e abre o submenu de exercicios 
    $("#exibirExercicio").click(function(){
 	   $("#menuExibirExercicio").toggleClass('ocultar');   
+   });
+   
+   // link o menu meu treino.
+   $("#meuTreino").click(function(){
+	   fechaDivExceto("#xxx");
+	   $("#sequenciaTreino").toggleClass('ocultar');
+	   fechaMenu();
+   });
+   
+     $("#TreinoDia").click(function(){
+	   fechaDivExceto("#divNaoExistente");
+	   $("#gravarTreino").toggleClass('ocultar');
+	   fechaMenu();
+	   
    });
    
    /*Fecha as divs com exceção da enviada por parametro*/
@@ -25,21 +40,7 @@ $(document).ready(function(){
 	  $("#sequenciaTreino").addClass('ocultar');
 	  $(naoFechar).fadeIn('slow');
    };
-   $("#TreinoDia").click(function(){
-	   $("#gravarTreino").toggleClass('ocultar');
-	   fechaMenu();
-	   
-	  $("#BICEPS").fadeOut('fast');
-	  $("#TRICEPS").fadeOut('fast');
-	  $("#COSTAS").fadeOut('fast');
-	  $("#PEITORAL").fadeOut('fast');
-	  $("#PERNAS").fadeOut('fast');
-	  $("#TRAPEZIO").fadeOut('fast');
-	  $("#DELTOIDE").fadeOut('fast');
-	  $("#GLUTEO").fadeOut('fast');
-	  $("sequenciaTreino").fadeOut('fast'); 
-	   
-   });
+ 
    $("#Biceps").click( function(){
       //Exibindo...
 	  fechaMenu();
