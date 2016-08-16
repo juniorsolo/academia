@@ -4,11 +4,11 @@ $(document).ready(function(){
 	// });
     var fechaMenu = function(){
 	   $("#navbar").removeClass('in');
-	   $("#menuExibirTreino").addClass('ocultar');   
+	   $("#menuExibirExercicio").addClass('ocultar');   
 	};
 	
-   $("#exibirTreino").click(function(){
-	   $("#menuExibirTreino").toggleClass('ocultar');   
+   $("#exibirExercicio").click(function(){
+	   $("#menuExibirExercicio").toggleClass('ocultar');   
    });
    
    /*Fecha as divs com exceção da enviada por parametro*/
