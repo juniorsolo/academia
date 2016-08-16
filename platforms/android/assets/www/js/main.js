@@ -10,26 +10,10 @@ $(document).ready(function(){
    $("#exibirTreino").click(function(){
 	   $("#menuExibirTreino").toggleClass('ocultar');   
    });
-   $("#TreinoDia").click(function(){
-	   $("#gravarTreino").toggleClass('ocultar');
-	   
-	  $("#BICEPS").fadeOut('fast');
-	  $("#TRICEPS").fadeOut('fast');
-	  $("#COSTAS").fadeOut('fast');
-	  $("#PEITORAL").fadeOut('fast');
-	  $("#PERNAS").fadeOut('fast');
-	  $("#TRAPEZIO").fadeOut('fast');
-	  $("#DELTOIDE").fadeOut('fast');
-	  $("#GLUTEO").fadeOut('fast');
-	   
-	   fechaMenu();
-   });
-   $("#Biceps").click( function(){
-      //Exibindo...
-	  $("#BICEPS").fadeIn('slow');
-	  fechaMenu();
-	  
-	  //Ocultando outros
+   
+   /*Fecha as divs com exceção da enviada por parametro*/
+   var fechaDivExceto = function(naoFechar){   
+	  $("#BICEPS").fadeOut('fast'); 
 	  $("#TRICEPS").fadeOut('fast');
 	  $("#COSTAS").fadeOut('fast');
 	  $("#PEITORAL").fadeOut('fast');
@@ -38,120 +22,71 @@ $(document).ready(function(){
 	  $("#DELTOIDE").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast');
 	  $("#gravarTreino").addClass('ocultar');
-   });
-   
-   $("#Triceps").click(function(){
-	   // Exibindo...
-	  $("#TRICEPS").fadeIn('slow');
-	  fechaMenu();
-	  
-	   //Ocultando outros
+	  $("#sequenciaTreino").addClass('ocultar');
+	  $(naoFechar).fadeIn('slow');
+   };
+   $("#TreinoDia").click(function(){
+	   $("#gravarTreino").toggleClass('ocultar');
+	   fechaMenu();
+	   
 	  $("#BICEPS").fadeOut('fast');
+	  $("#TRICEPS").fadeOut('fast');
 	  $("#COSTAS").fadeOut('fast');
 	  $("#PEITORAL").fadeOut('fast');
 	  $("#PERNAS").fadeOut('fast');
-      $("#TRAPEZIO").fadeOut('fast');
+	  $("#TRAPEZIO").fadeOut('fast');
 	  $("#DELTOIDE").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast');
-      $("#gravarTreino").addClass('ocultar');	  
+	  $("sequenciaTreino").fadeOut('fast'); 
+	   
+   });
+   $("#Biceps").click( function(){
+      //Exibindo...
+	  fechaMenu();
+	  fechaDivExceto("#BICEPS");
+   });
+   
+   $("#Triceps").click(function(){
+	  // Exibindo...
+	  fechaMenu();
+	  fechaDivExceto("#TRICEPS");	  
    });
    
    $("#Costas").click(function(){
 	   // Exibindo...
-	  $("#COSTAS").fadeIn('slow');
 	  fechaMenu();
-	  
-	   //Ocultando outros
-	  $("#BICEPS").fadeOut('fast');
-	  $("#TRICEPS").fadeOut('fast');
-	  $("#PEITORAL").fadeOut('fast');
-	  $("#PERNAS").fadeOut('fast');
-	  $("#TRAPEZIO").fadeOut('fast');
-	  $("#DELTOIDE").fadeOut('fast');
-	  $("#GLUTEO").fadeOut('fast');
-	  $("#gravarTreino").addClass('ocultar');
+      fechaDivExceto("#COSTAS");
    });
    
    $("#Peitoral").click(function(){
 	   // Exibindo...
-	  $("#PEITORAL").fadeIn('slow');
 	  fechaMenu();
-	  
-	   //Ocultando outros
-	  $("#BICEPS").fadeOut('fast');
-	  $("#TRICEPS").fadeOut('fast');
-	  $("#COSTAS").fadeOut('fast');
-	  $("#PERNAS").fadeOut('fast');
-	  $("#TRAPEZIO").fadeOut('fast');
-	  $("#DELTOIDE").fadeOut('fast');
-	  $("#GLUTEO").fadeOut('fast');
-	  $("#gravarTreino").addClass('ocultar');
+	  fechaDivExceto("#PEITORAL");
    });
    
    $("#Pernas").click(function(){
 	   // Exibindo...
-	  $("#PERNAS").fadeIn('slow');
 	  fechaMenu();
-	  
-	   //Ocultando outros
-	  $("#BICEPS").fadeOut('fast');
-	  $("#TRICEPS").fadeOut('fast');
-	  $("#COSTAS").fadeOut('fast');
-	  $("#PEITORAL").fadeOut('fast');
-	  $("#TRAPEZIO").fadeOut('fast');
-	  $("#DELTOIDE").fadeOut('fast');
-	  $("#GLUTEO").fadeOut('fast');
-      $("#gravarTreino").addClass('ocultar');	  
+	  fechaDivExceto("#PERNAS");
    });
    
    $("#Trapezio").click(function(){
 	   // Exibindo...
-	  $("#TRAPEZIO").fadeIn('slow');
 	  fechaMenu();
-	  
-	   //Ocultando outros
-	  $("#BICEPS").fadeOut('fast');
-	  $("#TRICEPS").fadeOut('fast');
-	  $("#COSTAS").fadeOut('fast');
-	  $("#PEITORAL").fadeOut('fast');
-	  $("#PERNAS").fadeOut('fast');
-	  $("#DELTOIDE").fadeOut('fast');
-	  $("#GLUTEO").fadeOut('fast'); 
-	  $("#gravarTreino").addClass('ocultar');
+	  fechaDivExceto("#TRAPEZIO");
    });
    
    $("#Deltoide").click(function(){
 	   // Exibindo...
-	  $("#DELTOIDE").fadeIn('slow');
 	  fechaMenu();
-	  
-	   //Ocultando outros
-	  $("#BICEPS").fadeOut('fast');
-	  $("#TRICEPS").fadeOut('fast');
-	  $("#COSTAS").fadeOut('fast');
-	  $("#PEITORAL").fadeOut('fast');
-	  $("#PERNAS").fadeOut('fast');
-	  $("#TRAPEZIO").fadeOut('fast');
-	  $("#GLUTEO").fadeOut('fast');
-      $("#gravarTreino").addClass('ocultar');	  
+      fechaDivExceto("#DELTOIDE");
    });
    
    $("#Gluteo").click(function(){
 	   // Exibindo...
-	  $("#GLUTEO").fadeIn('slow');
 	  fechaMenu();
-	  
-	   //Ocultando outros
-	  $("#BICEPS").fadeOut('fast');
-	  $("#TRICEPS").fadeOut('fast');
-	  $("#COSTAS").fadeOut('fast');
-	  $("#PEITORAL").fadeOut('fast');
-	  $("#PERNAS").fadeOut('fast');
-	  $("#TRAPEZIO").fadeOut('fast');
-	  $("#DELTOIDE").fadeOut('fast');
-      $("#gravarTreino").addClass('ocultar');	  
+      fechaDivExceto("#GLUTEO");
    });
    
-
 }); 
  

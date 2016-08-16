@@ -47,6 +47,9 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 	};
 
 	$scope.salvarTreino = function(){
+		$scope.categoriaSelecionada = "";
+		$scope.treinosDoDia=[];
+		$scope.categorias = carregarCategorias();
 		
 	};
     var removeItemOfArray= function(array , itemRemover){	    
