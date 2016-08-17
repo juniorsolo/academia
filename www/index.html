@@ -514,25 +514,15 @@
 			<thead>
 			  <tr>
 				<th>Data</th>
-				<th>Dia Semana</th>
+				<th>Semana</th>
 				<th>Treino Executado</th>
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr>
-				<td>14/07/2016</td>
-				<td>Segunda</td>
-				<td>Biceps,Peito</td>
-			  </tr>
-			  <tr>
-				<td>15/07/2016</td>
-				<td>Terça</td>
-				<td>Perna</td>
-			  </tr>
-			  <tr>
-				<td>18/07/2016</td>
-				<td>Quarta</td>
-				<td>Costas,Tríceps</td>
+			  <tr ng-repeat="h in historico">
+				<td>{{h.data.getDate()}}/{{h.data.getMonth() +1 }}/{{h.data.getFullYear()}}</td>
+				<td>{{h.data.getDay()}}</td>
+				<td>{{h.treino}}</td>
 			  </tr>
 			</tbody>
 		  </table>
