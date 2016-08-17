@@ -4,7 +4,7 @@ angular.module("academiaApp").controller('academiaController', function($scope){
    $scope.categorias.sort();
    $scope.exercicios=[{nome:"Rosca Direta",categoria:"BICEPS"},
 	                 {nome:"Rosca Concentrada",categoria:"BICEPS"},
-					 {nome:"Rosca Alternada",categoria:"BICEPS"},
+					 {nome:"Rosca Alternada",categoria:"BICEPS"},  
 					 {nome:"Pulley",categoria:"TRICEPS"},
 					 {nome:"Pulley Supinado",categoria:"TRICEPS"},
 					 {nome:"Pulley Corda",categoria:"TRICEPS"},
@@ -29,8 +29,15 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 					 {nome:"Elevação Posterior",categoria:"DELTOIDE"},
 					 {nome:"Remada Alta",categoria:"TRAPEZIO"}	 
 					 ];
+	$scope.historico = [{dataTreino: new Date(2016,07,07), grupo:"A"},
+	                    {dataTreino: new Date(2016,07,10), grupo:"B"},
+						{dataTreino: new Date(2016,07,12), grupo:"C"},
+						{dataTreino: new Date(2016,07,13), grupo:"D"},
+						{dataTreino: new Date(2016,07,14), grupo:"A"},
+						{dataTreino: new Date(2016,07,15), grupo:"B"},
+						{dataTreino: new Date(2016,07,17), grupo:"C"}];				 
 	$scope.treinosDoDia=[];
-    $scope.dataAtual = new Date();
+    $scope.dataGravarTreino = new Date();
 	$scope.categoriaSelecionada = "";
 	
 	$scope.addTreino = function(){
