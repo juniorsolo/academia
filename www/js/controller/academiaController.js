@@ -29,13 +29,13 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 					 {nome:"Elevação Posterior",categoria:"DELTOIDE"},
 					 {nome:"Remada Alta",categoria:"TRAPEZIO"}	 
 					 ];
-	$scope.historico = [{dataTreino: new Date(2016,07,07), grupo:"A"},
-	                    {dataTreino: new Date(2016,07,10), grupo:"B"},
-						{dataTreino: new Date(2016,07,12), grupo:"C"},
-						{dataTreino: new Date(2016,07,13), grupo:"D"},
-						{dataTreino: new Date(2016,07,14), grupo:"A"},
-						{dataTreino: new Date(2016,07,15), grupo:"B"},
-						{dataTreino: new Date(2016,07,17), grupo:"C"}];				 
+	$scope.historico = [{dataTreino: new Date(2016,07,07), treino:"A"},
+	                    {dataTreino: new Date(2016,07,10), treino:"B"},
+						{dataTreino: new Date(2016,07,12), treino:"C"},
+						{dataTreino: new Date(2016,07,13), treino:"D"},
+						{dataTreino: new Date(2016,07,14), treino:"A"},
+						{dataTreino: new Date(2016,07,15), treino:"B"},
+						{dataTreino: new Date(2016,07,17), treino:"C"}];				 
 	$scope.treinosDoDia=[];
     $scope.dataGravarTreino = new Date();
 	$scope.categoriaSelecionada = "";
