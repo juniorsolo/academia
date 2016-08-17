@@ -25,9 +25,9 @@
 		  </div> 
 		  <div id="navbar" class="navbar-collapse collapse">
 		   <ul class="nav navbar-nav navbar-right">
-		    <li><a href="#" id="meuTreino">Meu Treino</a></li>
-		    <li><a href="#" id="exibirExercicio">Exibir Exercícios</a>
-			    <ul id="menuExibirExercicio"class="navbar-nav ocultar ">
+		    <li><a href="#" id="menuMeuTreino">Meu Treino</a></li>
+		    <li><a href="#" id="menuExibirExercicio">Exibir Exercícios</a>
+			    <ul id="submenuExibirExercicio"class="navbar-nav ocultar ">
 					<li class="exibirExercicio"><a href="#" id="Biceps">Bíceps</a></li>
 					<li class="exibirExercicio"><a href="#" id="Triceps">Tríceps</a></li>
 					<li class="exibirExercicio"><a href="#" id="Costas">Costas</a></li>
@@ -38,14 +38,14 @@
 					<li class="exibirExercicio"><a href="#" id="Gluteo">Glúteo</a></li>
 				</ul>
 			</li>
-			<li><a href="#" id="TreinoDia">Gravar Treino</a></li>
-			<li><a href="#" id="Historico">Histórico</a></li>		
+			<li><a href="#" id="menuGravarTreino">Gravar Treino</a></li>
+			<li><a href="#" id="menuHistorico">Histórico</a></li>		
 		   </ul>
 		  </div>
 		 </div>
 		</nav>    
 	</div>
-	<div id="body">
+	<div id="conteudoExercicio">
 	    <div class="container ocultar" id="BICEPS">
 		  <h4>Bicéps</h4>
 		  <table class="table table-striped">
@@ -418,7 +418,7 @@
 		</div>
 		
 	</div>
-    <div id="gravarTreino" class="ocultar">
+    <div id="conteudoGravarTreino" class="ocultar">
 	    <div class="panel panel-default" style="margin:1%;">
            <div class="panel-heading" > 
 		        <p>Data do treino: <input ng-model="dataGravarTreino" style="border-radius:0.5em;" type="date" id="dataTreino"></p> 
@@ -466,7 +466,7 @@
         </div>
         
     </div>	
-	<div id="sequenciaTreino" class="ocultar">
+	<div id="conteudoSequenciaTreino" class="ocultar">
 	   <div class="container">
 	     <h3 style="text-align:center;">Sequência de treino</h3>
 		 <h4 style="text-align:center;"><strong>A > B > C > D</strong></h4>
@@ -505,7 +505,8 @@
 		 </tr> 
 		 </table> 	  
 		</div>     
-	<div>
+	<div id="conteudoHistorico">
+	   
 	<div>
 	</div>
    <div id="footer">

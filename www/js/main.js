@@ -4,24 +4,24 @@ $(document).ready(function(){
 	// });
     var fechaMenu = function(){
 	   $("#navbar").removeClass('in');
-	   $("#menuExibirExercicio").addClass('ocultar');   
+	   $("#submenuExibirExercicio").addClass('ocultar');   
 	};
 	
 	//Fecha e abre o submenu de exercicios 
-   $("#exibirExercicio").click(function(){
-	   $("#menuExibirExercicio").toggleClass('ocultar');   
+   $("#menuExibirExercicio").click(function(){
+	   $("#submenuExibirExercicio").toggleClass('ocultar');   
    });
    
    // link o menu meu treino.
-   $("#meuTreino").click(function(){
+   $("#menuMeuTreino").click(function(){
 	   fechaDivExceto("#xxx");
-	   $("#sequenciaTreino").toggleClass('ocultar');
+	   $("#conteudoSequenciaTreino").toggleClass('ocultar');
 	   fechaMenu();
    });
    
-     $("#TreinoDia").click(function(){
+     $("#menuGravarTreino").click(function(){
 	   fechaDivExceto("#divNaoExistente");
-	   $("#gravarTreino").toggleClass('ocultar');
+	   $("#conteudoGravarTreino").toggleClass('ocultar');
 	   fechaMenu();
 	   
    });
@@ -36,8 +36,8 @@ $(document).ready(function(){
 	  $("#TRAPEZIO").fadeOut('fast');
 	  $("#DELTOIDE").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast');
-	  $("#gravarTreino").addClass('ocultar');
-	  $("#sequenciaTreino").addClass('ocultar');
+	  $("#conteudoGravarTreino").addClass('ocultar');
+	  $("#conteudoSequenciaTreino").addClass('ocultar');
 	  $(naoFechar).fadeIn('slow');
    };
  
