@@ -14,16 +14,24 @@ $(document).ready(function(){
    
    // link o menu meu treino.
    $("#menuMeuTreino").click(function(){
-	   fechaDivExceto("#xxx");
+	   fechaDivExceto(null);
 	   $("#conteudoSequenciaTreino").toggleClass('ocultar');
 	   fechaMenu();
    });
    
-     $("#menuGravarTreino").click(function(){
-	   fechaDivExceto("#divNaoExistente");
+    // link do menu gravar treino 
+    $("#menuGravarTreino").click(function(){
+	   fechaDivExceto(null);
 	   $("#conteudoGravarTreino").toggleClass('ocultar');
 	   fechaMenu();
 	   
+   });
+   
+   //link do menu historico
+   $("#menuHistorico").click(function(){
+	   fechaDivExceto(null);
+	   $("#conteudoHistorico").toggleClass('ocultar');
+	   fechaMenu();
    });
    
    /*Fecha as divs com exceção da enviada por parametro*/
@@ -38,6 +46,7 @@ $(document).ready(function(){
 	  $("#GLUTEO").fadeOut('fast');
 	  $("#conteudoGravarTreino").addClass('ocultar');
 	  $("#conteudoSequenciaTreino").addClass('ocultar');
+	  $("#conteudoHistorico").addClass('ocultar');
 	  $(naoFechar).fadeIn('slow');
    };
  

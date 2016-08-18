@@ -519,7 +519,7 @@
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr ng-repeat="h in historico">
+			  <tr ng-repeat="h in historico | orderBy: 'h.data':true">
 				<td>{{h.data.getDate()}}/{{h.data.getMonth() +1 }}/{{h.data.getFullYear()}}</td>
 				<td>{{h.data.getDay() | diaSemanaFilter}}</td>
 				<td>{{h.treino}}</td>
