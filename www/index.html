@@ -419,7 +419,7 @@
 		</div>
 		
 	</div>
-    <div id="conteudoGravarTreino" class="">
+    <div id="conteudoGravarTreino" class="ocultar">
 	    <div class="panel panel-default" style="margin:1%;">
            <div class="panel-heading" > 
 		        <p>Data do treino: <input ng-model="dataGravarTreino" style="border-radius:0.5em;" type="date" id="dataTreino"></p> 
@@ -440,10 +440,7 @@
 				   </select>
 			   </div>
                <div style="text-align:center">
-			       <button id="addTreino" type="button" class="btn btn-info " style="margin:1%; width:40%" ng-click="addTreino()" ng-disabled="categoriaSelecionada.length < 2">Adicionar</button>
-				   
-				   <button id="vibrar" type="button" class="btn btn-info " style="margin:1%; width:40%" onclick="vibrate();">TesteVibrar</button>
-				   
+			       <button id="addTreino" type="button" class="btn btn-info " style="margin:1%; width:40%" ng-click="addTreino()" ng-disabled="categoriaSelecionada.length < 2">Adicionar</button>		   
 				   <button type="button" class="btn btn-success " style="margin:1%; width:40%" data-toggle="modal"  data-target="#myModal"  ng-disabled="treinosDoDia.length <= 0">Salvar</button>
 				   
 				   <!-- Modal -->

@@ -5,6 +5,6 @@ function onDeviceReady() {
 }
 
  function vibrate() {
-	 alert("vibrraandooo");
-        navigator.vibrate(2000);
+	 //alert("vibrraandooo");
+        navigator.vibrate(1000);
     }
