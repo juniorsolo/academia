@@ -1,4 +1,4 @@
-angular.module("academiaApp").controller('academiaController', function($scope){
+angular.module("academiaApp").controller('academiaController', function($scope,$cordovaVibration){
    var carregarCategorias = function(){ return ["BICEPS","COSTAS","TRICEPS","PEITORAL","PERNAS","DELTOIDE","TRAPEZIO","GLUTEO"]};
    $scope.categorias = carregarCategorias();
    $scope.categorias.sort();
@@ -39,7 +39,12 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 	$scope.treinosDoDia=[];
     $scope.dataGravarTreino = new Date();
 	$scope.categoriaSelecionada = "";
-	
+	var service = {};
+	service = function(successCallback, errorCallback) {
+				document.addEventListener("deviceready", function () {
+				  $cordovaVibration.vibrate(1000);
+				});
+			  }
 	$scope.addTreino = function(){
 		if($scope.categoriaSelecionada != ""){
 		  $scope.treinosDoDia.push($scope.categoriaSelecionada);
@@ -50,7 +55,9 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 	$scope.removerTreino = function(treino){
 		$scope.treinosDoDia = removeItemOfArray($scope.treinosDoDia, treino)
 		$scope.categorias.push(treino);
-		$scope.categorias.sort();
+		$scope.categorias.sort();  
+        service();
+		
 	};
 
 	$scope.salvarTreino = function(){
