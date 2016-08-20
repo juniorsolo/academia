@@ -4,11 +4,34 @@ $(document).ready(function(){
 	// });
     var fechaMenu = function(){
 	   $("#navbar").removeClass('in');
-	   $("#menuExibirTreino").addClass('ocultar');   
+	   $("#submenuExibirExercicio").addClass('ocultar');   
 	};
 	
-   $("#exibirTreino").click(function(){
-	   $("#menuExibirTreino").toggleClass('ocultar');   
+	//Fecha e abre o submenu de exercicios 
+   $("#menuExibirExercicio").click(function(){
+	   $("#submenuExibirExercicio").toggleClass('ocultar');   
+   });
+   
+   // link o menu meu treino.
+   $("#menuMeuTreino").click(function(){
+	   fechaDivExceto(null);
+	   $("#conteudoSequenciaTreino").toggleClass('ocultar');
+	   fechaMenu();
+   });
+   
+    // link do menu gravar treino 
+    $("#menuGravarTreino").click(function(){
+	   fechaDivExceto(null);
+	   $("#conteudoGravarTreino").toggleClass('ocultar');
+	   fechaMenu();
+	   
+   });
+   
+   //link do menu historico
+   $("#menuHistorico").click(function(){
+	   fechaDivExceto(null);
+	   $("#conteudoHistorico").toggleClass('ocultar');
+	   fechaMenu();
    });
    
    /*Fecha as divs com exceção da enviada por parametro*/
@@ -21,25 +44,12 @@ $(document).ready(function(){
 	  $("#TRAPEZIO").fadeOut('fast');
 	  $("#DELTOIDE").fadeOut('fast');
 	  $("#GLUTEO").fadeOut('fast');
-	  $("#gravarTreino").addClass('ocultar');
-	  $("#sequenciaTreino").addClass('ocultar');
+	  $("#conteudoGravarTreino").addClass('ocultar');
+	  $("#conteudoSequenciaTreino").addClass('ocultar');
+	  $("#conteudoHistorico").addClass('ocultar');
 	  $(naoFechar).fadeIn('slow');
    };
-   $("#TreinoDia").click(function(){
-	   $("#gravarTreino").toggleClass('ocultar');
-	   fechaMenu();
-	   
-	  $("#BICEPS").fadeOut('fast');
-	  $("#TRICEPS").fadeOut('fast');
-	  $("#COSTAS").fadeOut('fast');
-	  $("#PEITORAL").fadeOut('fast');
-	  $("#PERNAS").fadeOut('fast');
-	  $("#TRAPEZIO").fadeOut('fast');
-	  $("#DELTOIDE").fadeOut('fast');
-	  $("#GLUTEO").fadeOut('fast');
-	  $("sequenciaTreino").fadeOut('fast'); 
-	   
-   });
+ 
    $("#Biceps").click( function(){
       //Exibindo...
 	  fechaMenu();

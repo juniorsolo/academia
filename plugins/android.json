@@ -7,64 +7,64 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.junior.academia"
         },
         "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
+            "PACKAGE_NAME": "com.junior.academia"
         },
-        "cordova-plugin-battery-status": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.junior.academia"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.junior.academia"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
+            "PACKAGE_NAME": "com.junior.academia"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.junior.HelloCordova"
+            "PACKAGE_NAME": "com.junior.academia"
         }
     }
 }

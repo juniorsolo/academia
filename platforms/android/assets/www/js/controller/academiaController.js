@@ -1,10 +1,10 @@
-angular.module("academiaApp").controller('academiaController', function($scope){
+angular.module("academiaApp").controller('academiaController', function($scope,$cordovaVibration){
    var carregarCategorias = function(){ return ["BICEPS","COSTAS","TRICEPS","PEITORAL","PERNAS","DELTOIDE","TRAPEZIO","GLUTEO"]};
    $scope.categorias = carregarCategorias();
    $scope.categorias.sort();
    $scope.exercicios=[{nome:"Rosca Direta",categoria:"BICEPS"},
 	                 {nome:"Rosca Concentrada",categoria:"BICEPS"},
-					 {nome:"Rosca Alternada",categoria:"BICEPS"},
+					 {nome:"Rosca Alternada",categoria:"BICEPS"},  
 					 {nome:"Pulley",categoria:"TRICEPS"},
 					 {nome:"Pulley Supinado",categoria:"TRICEPS"},
 					 {nome:"Pulley Corda",categoria:"TRICEPS"},
@@ -29,10 +29,16 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 					 {nome:"Elevação Posterior",categoria:"DELTOIDE"},
 					 {nome:"Remada Alta",categoria:"TRAPEZIO"}	 
 					 ];
+	$scope.historico = [{data: new Date(2016,07,07), treino:"PEITORAL,BICEPS"},
+	                    {data: new Date(2016,07,10), treino:"PERNAS"},
+						{data: new Date(2016,07,12), treino:"COSTAS, TRICEPS"},
+						{data: new Date(2016,07,13), treino:"DELTOIDE"},
+						{data: new Date(2016,07,14), treino:"PEITORAL,BICEPS"},
+						{data: new Date(2016,07,15), treino:"PERNAS"},
+						{data: new Date(2016,07,17), treino:"COSTAS, TRICEPS"}];				 
 	$scope.treinosDoDia=[];
-    $scope.dataAtual = new Date();
+    $scope.dataGravarTreino = new Date();
 	$scope.categoriaSelecionada = "";
-	
 	$scope.addTreino = function(){
 		if($scope.categoriaSelecionada != ""){
 		  $scope.treinosDoDia.push($scope.categoriaSelecionada);
@@ -43,7 +49,7 @@ angular.module("academiaApp").controller('academiaController', function($scope){
 	$scope.removerTreino = function(treino){
 		$scope.treinosDoDia = removeItemOfArray($scope.treinosDoDia, treino)
 		$scope.categorias.push(treino);
-		$scope.categorias.sort();
+		$scope.categorias.sort();  		
 	};
 
 	$scope.salvarTreino = function(){

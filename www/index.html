@@ -8,6 +8,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/jqueryUI/jquery-ui.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+
 </head>
 <body ng-controller="academiaController">
 
@@ -418,7 +419,7 @@
 		</div>
 		
 	</div>
-    <div id="conteudoGravarTreino" class="ocultar">
+    <div id="conteudoGravarTreino" class="">
 	    <div class="panel panel-default" style="margin:1%;">
            <div class="panel-heading" > 
 		        <p>Data do treino: <input ng-model="dataGravarTreino" style="border-radius:0.5em;" type="date" id="dataTreino"></p> 
@@ -440,6 +441,9 @@
 			   </div>
                <div style="text-align:center">
 			       <button id="addTreino" type="button" class="btn btn-info " style="margin:1%; width:40%" ng-click="addTreino()" ng-disabled="categoriaSelecionada.length < 2">Adicionar</button>
+				   
+				   <button id="vibrar" type="button" class="btn btn-info " style="margin:1%; width:40%" onclick="vibrate();">TesteVibrar</button>
+				   
 				   <button type="button" class="btn btn-success " style="margin:1%; width:40%" data-toggle="modal"  data-target="#myModal"  ng-disabled="treinosDoDia.length <= 0">Salvar</button>
 				   
 				   <!-- Modal -->
@@ -547,6 +551,7 @@
 
 <!-- Importando cordova huhuhuahua-->
 <script src="js/cordova/ng-cordova.js"></script>
+<script src="js/cordova/cordova.js"></script>
 
 <script src="js/main.js"></script>
 </body>

@@ -1,1 +1,1 @@
-var app = angular.module('academiaApp',[]);
+var app = angular.module('academiaApp',['ngCordova']);

@@ -6,8 +6,9 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-
+<link href="css/jqueryUI/jquery-ui.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+
 </head>
 <body ng-controller="academiaController">
 
@@ -25,26 +26,27 @@
 		  </div> 
 		  <div id="navbar" class="navbar-collapse collapse">
 		   <ul class="nav navbar-nav navbar-right">
-		    <li><a href="#" id="exibirTreino">Exibir Treino</a>
-			    <ul id="menuExibirTreino"class="navbar-nav ocultar ">
-					<li class="exibirTreino"><a href="#" id="Biceps">Bíceps</a></li>
-					<li class="exibirTreino"><a href="#" id="Triceps">Tríceps</a></li>
-					<li class="exibirTreino"><a href="#" id="Costas">Costas</a></li>
-					<li class="exibirTreino"><a href="#" id="Peitoral">Peitoral</a></li>
-					<li class="exibirTreino"><a href="#" id="Pernas">Pernas</a></li>
-					<li class="exibirTreino"><a href="#" id="Trapezio">Trapézio</a></li>
-					<li class="exibirTreino"><a href="#" id="Deltoide">Deltóide</a></li>
-					<li class="exibirTreino"><a href="#" id="Gluteo">Glúteo</a></li>
+		    <li><a href="#" id="menuMeuTreino">Meu Treino</a></li>
+		    <li><a href="#" id="menuExibirExercicio">Exibir Exercícios</a>
+			    <ul id="submenuExibirExercicio"class="navbar-nav ocultar ">
+					<li class="exibirExercicio"><a href="#" id="Biceps">Bíceps</a></li>
+					<li class="exibirExercicio"><a href="#" id="Triceps">Tríceps</a></li>
+					<li class="exibirExercicio"><a href="#" id="Costas">Costas</a></li>
+					<li class="exibirExercicio"><a href="#" id="Peitoral">Peitoral</a></li>
+					<li class="exibirExercicio"><a href="#" id="Pernas">Pernas</a></li>
+					<li class="exibirExercicio"><a href="#" id="Trapezio">Trapézio</a></li>
+					<li class="exibirExercicio"><a href="#" id="Deltoide">Deltóide</a></li>
+					<li class="exibirExercicio"><a href="#" id="Gluteo">Glúteo</a></li>
 				</ul>
 			</li>
-			<li><a href="#" id="TreinoDia">Gravar Treino</a></li>
-			<li><a href="#" id="Historico">Histórico</a></li>		
+			<li><a href="#" id="menuGravarTreino">Gravar Treino</a></li>
+			<li><a href="#" id="menuHistorico">Histórico</a></li>		
 		   </ul>
 		  </div>
 		 </div>
 		</nav>    
 	</div>
-	<div id="body">
+	<div id="conteudoExercicio">
 	    <div class="container ocultar" id="BICEPS">
 		  <h4>Bicéps</h4>
 		  <table class="table table-striped">
@@ -417,10 +419,10 @@
 		</div>
 		
 	</div>
-    <div id="gravarTreino" class="ocultar">
+    <div id="conteudoGravarTreino" class="">
 	    <div class="panel panel-default" style="margin:1%;">
            <div class="panel-heading" > 
-		        <p>Data do treino: <input type="date" id="dataTreino"></p> 
+		        <p>Data do treino: <input ng-model="dataGravarTreino" style="border-radius:0.5em;" type="date" id="dataTreino"></p> 
 			</div>
            <div class="panel-body" style="margin:1%; padding:1%;">
                <div>
@@ -439,6 +441,9 @@
 			   </div>
                <div style="text-align:center">
 			       <button id="addTreino" type="button" class="btn btn-info " style="margin:1%; width:40%" ng-click="addTreino()" ng-disabled="categoriaSelecionada.length < 2">Adicionar</button>
+				   
+				   <button id="vibrar" type="button" class="btn btn-info " style="margin:1%; width:40%" onclick="vibrate();">TesteVibrar</button>
+				   
 				   <button type="button" class="btn btn-success " style="margin:1%; width:40%" data-toggle="modal"  data-target="#myModal"  ng-disabled="treinosDoDia.length <= 0">Salvar</button>
 				   
 				   <!-- Modal -->
@@ -465,33 +470,89 @@
         </div>
         
     </div>	
-	<div id="sequenciaTreino">
-	   <div class="container" style="display:float;">
-		  <h2>Active Item in a List Group</h2>
-		  <div class="list-group" style="width:20%;">
-			<a href="#" class="list-group-item active">A</a>
-			<a href="#" class="list-group-item">Peito</a>
-			<a href="#" class="list-group-item">Tríceps</a>
-		  </div>
-		  <div class="list-group" style="width:20%;">
-			<a href="#" class="list-group-item active">A</a>
-			<a href="#" class="list-group-item">Peito</a>
-			<a href="#" class="list-group-item">Tríceps</a>
-		  </div>
-		</div>
+	<div id="conteudoSequenciaTreino" class="ocultar">
+	   <div class="container">
+	     <h4 class="alert alert-info">Você deverá seguir a sequência de treino abaixo:</h3>
+		 <h4 style="text-align:center;" class="alert alert-info"><strong>A - B - C - D</strong></h4>
+		 <table class="table">
+		 <tr>
+		  
+		  <td>
+			  <div class="list-group" style="width:auto;text-align:center;">
+				<a href="#" class="list-group-item active">A</a>
+				<a href="#" class="list-group-item">Peito</a>
+				<a href="#" class="list-group-item">Tríceps</a>
+			  </div>
+		  </td>
+		  <td>
+			  <div class="list-group" style="width:auto;text-align:center;">
+				<a href="#" class="list-group-item active">B</a>
+				<a href="#" class="list-group-item">Perna</a>
+			  </div>
+		  </td>
+		  </tr>
+		  <tr>
+		  <td>
+			  <div class="list-group" style="width:auto;text-align:center;">
+				<a href="#" class="list-group-item active">C</a>
+				<a href="#" class="list-group-item">Costas</a>
+				<a href="#" class="list-group-item">Bíceps</a>
+			  </div>
+		  </td>
+		  <td>
+			  <div class="list-group" style="width:auto;text-align:center;">
+				<a href="#" class="list-group-item active">D</a>
+				<a href="#" class="list-group-item">Deltoide</a>
+				<a href="#" class="list-group-item">Abdomem</a>
+			  </div>
+		  </td>
+		 </tr> 
+		 </table> 	  
+		</div> 
+    </div>		
+	
+	<div id="conteudoHistorico">
+	    <div class="container">
+		  <h2>Histórico</h2>
+		  <table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Data</th>
+				<th>Semana</th>
+				<th>Treino Executado</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr ng-repeat="h in historico | orderBy: 'h.data':true">
+				<td>{{h.data.getDate()}}/{{h.data.getMonth() +1 }}/{{h.data.getFullYear()}}</td>
+				<td>{{h.data.getDay() | diaSemanaFilter}}</td>
+				<td>{{h.treino}}</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>    
+	   
+	</div>
+    <div id="footer">
         
-	<div>
-   <div id="footer">
-        
-   </div>
+    </div>
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery/jquery-2.2.3.min.js"></script>
 <script src="js/bootstrap/bootstrap.min.js"></script>
+
+<!-- JQueryUI para animação -->
+<script src="js/jqueryUI/jquery-ui.min.js"></script>
 
 <!-- Importando biblioteca angular, controller e etc..-->
 <script src="js/angularj/angular.js"></script>
 <script src="js/module/app.js"></script>
 <script src="js/controller/academiaController.js"></script>
+<script src="js/filter/diaSemanaFilter.js"></script>
+
+<!-- Importando cordova huhuhuahua-->
+<script src="js/cordova/ng-cordova.js"></script>
+<script src="js/cordova/cordova.js"></script>
+
 <script src="js/main.js"></script>
 </body>
 </html>	
