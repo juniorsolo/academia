@@ -34,6 +34,10 @@ $(document).ready(function(){
 	   fechaMenu();
    });
    
+   $(".teste").click(function(){
+	   $(this).effect("shake",800);
+   });
+   
    /*Fecha as divs com exceção da enviada por parametro*/
    var fechaDivExceto = function(naoFechar){   
 	  $("#BICEPS").fadeOut('fast'); 
