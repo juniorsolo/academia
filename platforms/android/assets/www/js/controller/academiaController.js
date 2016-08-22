@@ -1,4 +1,4 @@
-angular.module("academiaApp").controller('academiaController', function($scope,$cordovaVibration){
+angular.module("academiaApp").controller('academiaController', function($scope,$cordovaVibration,$cordovaCamera){
    var carregarCategorias = function(){ return ["BICEPS","COSTAS","TRICEPS","PEITORAL","PERNAS","DELTOIDE","TRAPEZIO","GLUTEO"]};
    $scope.categorias = carregarCategorias();
    $scope.categorias.sort();
@@ -41,14 +41,27 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 	$scope.categoriaSelecionada = "";
 	
 	document.addEventListener("deviceready", function () {
-         alert("xxx");
-		 console.log(navigator.vibrate);
+        console.log(navigator.vibrate);
      }, false);
-     
+	 
+  
+	 
 	function vibrate() {
-	    //alert("vibrraandooo");
         navigator.vibrate(300);
     } 
+	
+	function foto(){
+
+			// Take picture using device camera and retrieve image as base64-encoded string
+			navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+			quality: 30,
+			targetWidth: 600,
+			targetHeight: 600,
+			destinationType: destinationType.FILE_URI,
+			saveToPhotoAlbum: true
+			});
+	    
+	};
 	 
 	$scope.addTreino = function(){
 		if($scope.categoriaSelecionada != ""){
