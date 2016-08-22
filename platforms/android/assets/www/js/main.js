@@ -34,7 +34,7 @@ $(document).ready(function(){
 	   fechaMenu();
    });
    
-   $(".teste").click(function(){
+   $(".efectShake").click(function(){
 	   $(this).effect("shake",800);
    });
    
