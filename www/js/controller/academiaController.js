@@ -40,43 +40,33 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
     $scope.dataGravarTreino = new Date();
 	$scope.categoriaSelecionada = "";
 	
-	document.addEventListener("deviceready", function () {
-        console.log(navigator.vibrate);
-     }, false);
-	 
-  
-	 
+	// camera ****
+    
+	 function getModel(){
+	    alert(navigator.camera);
+		navigator.camera.getPicture(onSuccess, onFail,{
+			quality:50,
+			destinationType: Camera.DestinationType.DATA_URL,
+			saveToPhotoAlbum:true
+			});
+        function onSuccess(imageData){
+			var image = document.getElementById('minhaFoto');
+			image.style.display = "block";
+			image.src= "data:image/jpeg;base64," + imageData;
+		};		
+		function onFail(message){
+			alert('fail because: ' + message);
+		};
+		
+	}; 
+	
 	function vibrate() {
         navigator.vibrate(300);
+		
     } 
-	
-	function onPhotoURISuccess(imageURI) {
-		// Uncomment to view the image file URI
-		console.log(imageURI);
-		// Get image handle
-		//
-		var galleryImage = document.getElementById('image');
-		// Unhide image elements
-		//
-		galleryImage.style.display = 'block';
-		// Show the captured photo
-		// The inline CSS rules are used to resize the image
-		//
-		galleryImage.src = imageURI;
-	}
-	
-	
-	function foto(){
-
-			// Take picture using device camera and retrieve image as base64-encoded string
-			navigator.camera.getPicture(onPhotoDataSuccess("image/"), onFail, {
-			quality: 30,
-			targetWidth: 600,
-			targetHeight: 600,
-			destinationType: destinationType.FILE_URI,
-			saveToPhotoAlbum: true
-			});
-	    
+	$scope.foto = function(){
+		getModel();
+       		
 	};
 	 
 	$scope.addTreino = function(){
@@ -84,7 +74,7 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 		  $scope.treinosDoDia.push($scope.categoriaSelecionada);
 		  $scope.categorias = removeItemOfArray($scope.categorias, $scope.categoriaSelecionada);
 		  $scope.categoriaSelecionada = "";
-		  vibrate(); // vibrate();
+		  vibrate();
         } 		
 	};
 	$scope.removerTreino = function(treino){

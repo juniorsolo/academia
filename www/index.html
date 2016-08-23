@@ -530,13 +530,14 @@
 		</div>    
 	   
 	</div>
-	
-	<div id="divTestCamera">
+	<div class="app">
+	<div id="deviceready">
 	    <!--<button onclick="capturePhoto();">Capture Photo</button><br>-->
 		<button ng-click="foto();">Capture Photo</button><br>
-		<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo
+		<button>From Photo
 		Library</button><br>
-		<img id="image" src="" style="display:none;width:100%;">
+		<img id="minhaFoto" src="" style="display:none;width:250px;height:250px;">
+	</div>
 	</div>
     <div id="footer">
         
@@ -556,7 +557,7 @@
 
 <!-- Importando cordova huhuhuahua-->
 <script src="js/cordova/ng-cordova.js"></script>
-
+<script src="cordova.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>	

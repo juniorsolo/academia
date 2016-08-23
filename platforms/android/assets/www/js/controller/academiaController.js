@@ -40,27 +40,70 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
     $scope.dataGravarTreino = new Date();
 	$scope.categoriaSelecionada = "";
 	
-	document.addEventListener("deviceready", function () {
-        console.log(navigator.vibrate);
-     }, false);
-	 
-  
-	 
+	// camera ****
+    
+	var getModel= function(){
+		var model = new Object();
+
+
+	  model.doTakePicture = function (sourceType) {
+		model.doDoTakePicture(sourceType);
+	  };
+
+	  model.doDoTakePicture = function (sourceType) {
+		var options = {
+		  quality: 50,
+		  destinationType: Camera.DestinationType.DATA_URL,
+		  sourceType: sourceType,
+		  allowEdit: true,
+		  encodingType: Camera.EncodingType.JPEG,
+		  targetWidth: 640,
+		  targetHeight: 480,
+		  popoverOptions: CameraPopoverOptions,
+		  saveToPhotoAlbum: false
+		};
+		$cordovaCamera.getPicture(options).then(function (imageData) {
+		  model.addPicture("image/jpeg", imageData);
+		}, function (error) {
+		  return null;
+		});
+	  };
+
+
+	  model.takePicture = function () {
+		  
+		document.addEventListener("deviceready", function () {
+		alert("nnn");	
+		  model.doTakePicture(Camera.PictureSourceType.CAMERA);
+		}, false);
+	  };
+
+	  model.chooseFromPhotoLibrary = function () {
+		  
+		document.addEventListener("deviceready", function () {
+		  alert("1111"); 	
+		  model.doTakePicture(Camera.PictureSourceType.PHOTOLIBRARY);
+		}, false);
+	  };
+
+	  model.chooseFromPhotoAlbum = function () {
+		document.addEventListener("deviceready", function () {
+		  model.doTakePicture(Camera.PictureSourceType.SAVEDPHOTOALBUM);
+		}, false);
+	  };
+
+	  return model;
+	}; 
+	
 	function vibrate() {
         navigator.vibrate(300);
+		
     } 
-	
-	function foto(){
+ 
 
-			// Take picture using device camera and retrieve image as base64-encoded string
-			navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
-			quality: 30,
-			targetWidth: 600,
-			targetHeight: 600,
-			destinationType: destinationType.FILE_URI,
-			saveToPhotoAlbum: true
-			});
-	    
+	
+	$scope.foto = function(){
+		getModel().takePicture();  
 	};
 	 
 	$scope.addTreino = function(){
@@ -68,7 +111,7 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 		  $scope.treinosDoDia.push($scope.categoriaSelecionada);
 		  $scope.categorias = removeItemOfArray($scope.categorias, $scope.categoriaSelecionada);
 		  $scope.categoriaSelecionada = "";
-		  vibrate(); // vibrate();
+		  vibrate();
         } 		
 	};
 	$scope.removerTreino = function(treino){
