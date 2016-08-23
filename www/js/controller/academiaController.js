@@ -42,30 +42,38 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 	
 	// camera ****
     
-	 function getModel(){
-	    alert(navigator.camera);
-		navigator.camera.getPicture(onSuccess, onFail,{
-			quality:50,
-			destinationType: Camera.DestinationType.DATA_URL,
-			saveToPhotoAlbum:true
-			});
-        function onSuccess(imageData){
-			var image = document.getElementById('minhaFoto');
-			image.style.display = "block";
-			image.src= "data:image/jpeg;base64," + imageData;
-		};		
-		function onFail(message){
-			alert('fail because: ' + message);
-		};
-		
-	}; 
-	
+	document.addEventListener("deviceready", function () {
+
+    var options = {
+      quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 100,
+      targetHeight: 100,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: true,
+	  correctOrientation:true
+    };
+
+    $cordovaCamera.getPicture(options).then(function(imageData) {
+      var image = document.getElementById('minhaFoto');
+	  image.style.display = "block";
+      image.src = "data:image/jpeg;base64," + imageData;
+    }, function(err) {
+      // error
+	  alert("Não foi possível acessar a camera."); 
+    });
+
+  }, false);
+	 
 	function vibrate() {
         navigator.vibrate(300);
 		
     } 
 	$scope.foto = function(){
-		getModel();
+		
        		
 	};
 	 

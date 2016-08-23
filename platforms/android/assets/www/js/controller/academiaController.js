@@ -42,68 +42,38 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 	
 	// camera ****
     
-	var getModel= function(){
-		var model = new Object();
+	document.addEventListener("deviceready", function () {
 
+    var options = {
+      quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 100,
+      targetHeight: 100,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: true,
+	  correctOrientation:true
+    };
 
-	  model.doTakePicture = function (sourceType) {
-		model.doDoTakePicture(sourceType);
-	  };
+    $cordovaCamera.getPicture(options).then(function(imageData) {
+      var image = document.getElementById('minhaFoto');
+	  image.style.display = "block";
+      image.src = "data:image/jpeg;base64," + imageData;
+    }, function(err) {
+      // error
+    });
 
-	  model.doDoTakePicture = function (sourceType) {
-		var options = {
-		  quality: 50,
-		  destinationType: Camera.DestinationType.DATA_URL,
-		  sourceType: sourceType,
-		  allowEdit: true,
-		  encodingType: Camera.EncodingType.JPEG,
-		  targetWidth: 640,
-		  targetHeight: 480,
-		  popoverOptions: CameraPopoverOptions,
-		  saveToPhotoAlbum: false
-		};
-		$cordovaCamera.getPicture(options).then(function (imageData) {
-		  model.addPicture("image/jpeg", imageData);
-		}, function (error) {
-		  return null;
-		});
-	  };
-
-
-	  model.takePicture = function () {
-		  
-		document.addEventListener("deviceready", function () {
-		alert("nnn");	
-		  model.doTakePicture(Camera.PictureSourceType.CAMERA);
-		}, false);
-	  };
-
-	  model.chooseFromPhotoLibrary = function () {
-		  
-		document.addEventListener("deviceready", function () {
-		  alert("1111"); 	
-		  model.doTakePicture(Camera.PictureSourceType.PHOTOLIBRARY);
-		}, false);
-	  };
-
-	  model.chooseFromPhotoAlbum = function () {
-		document.addEventListener("deviceready", function () {
-		  model.doTakePicture(Camera.PictureSourceType.SAVEDPHOTOALBUM);
-		}, false);
-	  };
-
-	  return model;
-	}; 
-	
+  }, false);
+	 
 	function vibrate() {
         navigator.vibrate(300);
 		
     } 
- 
-
-	
 	$scope.foto = function(){
-		getModel().takePicture();  
+		
+       		
 	};
 	 
 	$scope.addTreino = function(){

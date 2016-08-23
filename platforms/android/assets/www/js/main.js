@@ -1,7 +1,5 @@
 $(document).ready(function(){ 
-     //$("#addTreino").click(function(){
-	//	$("#infoRemoveTreino").fadeOut(3000);
-	// });
+    
     var fechaMenu = function(){
 	   $("#navbar").removeClass('in');
 	   $("#submenuExibirExercicio").addClass('ocultar');   
