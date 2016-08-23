@@ -42,10 +42,11 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 	
 	// camera ****
     
+	function getFoto(){
 	document.addEventListener("deviceready", function () {
 
     var options = {
-      quality: 50,
+      quality: 90,
       destinationType: Camera.DestinationType.DATA_URL,
       sourceType: Camera.PictureSourceType.CAMERA,
       allowEdit: true,
@@ -63,17 +64,19 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
       image.src = "data:image/jpeg;base64," + imageData;
     }, function(err) {
       // error
-	  alert("Não foi possível acessar a camera."); 
+	  alert("Não foi possível inserir a imagem."); 
     });
 
   }, false);
+  
+	}
 	 
 	function vibrate() {
         navigator.vibrate(300);
 		
     } 
 	$scope.foto = function(){
-		
+		getFoto();
        		
 	};
 	 
