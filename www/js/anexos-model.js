@@ -1,6 +1,6 @@
 function doCreateAnexosModel(lse, $cordovaCamera, microCreditoStorage) {
   var model = {}
-
+//ripple emulate******
   model.model = new Array();
 
   model.loadTiposAnexo = function () {
