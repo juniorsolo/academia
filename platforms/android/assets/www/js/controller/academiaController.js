@@ -1,4 +1,4 @@
-angular.module("academiaApp").controller('academiaController', function($scope,$cordovaVibration,$cordovaCamera){
+angular.module("academiaApp").controller('academiaController', function($scope,$cordovaVibration,$cordovaCamera,$cordovaGeolocation){
    var carregarCategorias = function(){ return ["BICEPS","COSTAS","TRICEPS","PEITORAL","PERNAS","DELTOIDE","TRAPEZIO","GLUTEO"]};
    $scope.categorias = carregarCategorias();
    $scope.categorias.sort();
@@ -43,32 +43,47 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 	// camera ****
     
 	function getFoto(){
-	document.addEventListener("deviceready", function () {
+		document.addEventListener("deviceready", function () {
 
-    var options = {
-      quality: 50,
-      destinationType: Camera.DestinationType.DATA_URL,
-      sourceType: Camera.PictureSourceType.CAMERA,
-      allowEdit: true,
-      encodingType: Camera.EncodingType.JPEG,
-      targetWidth: 100,
-      targetHeight: 100,
-      popoverOptions: CameraPopoverOptions,
-      saveToPhotoAlbum: true,
-	  correctOrientation:true
-    };
+		var options = {
+		  quality: 90,
+		  destinationType: Camera.DestinationType.DATA_URL,
+		  sourceType: Camera.PictureSourceType.CAMERA,
+		  allowEdit: true,
+		  encodingType: Camera.EncodingType.JPEG,
+		  targetWidth: 100,
+		  targetHeight: 100,
+		  popoverOptions: CameraPopoverOptions,
+		  saveToPhotoAlbum: true,
+		  correctOrientation:true
+		};
 
-    $cordovaCamera.getPicture(options).then(function(imageData) {
-      var image = document.getElementById('minhaFoto');
-	  image.style.display = "block";
-      image.src = "data:image/jpeg;base64," + imageData;
-    }, function(err) {
-      // error
-	  alert("Não foi possível acessar a camera."); 
-    });
+		$cordovaCamera.getPicture(options).then(function(imageData) {
+		  var image = document.getElementById('minhaFoto');
+		  image.style.display = "block";
+		  image.src = "data:image/jpeg;base64," + imageData;
+		}, function(err) {
+		  // error
+		  alert("Não foi possível inserir a imagem."); 
+		});
 
-  }, false);
-  
+        }, false);
+	}
+	
+	function getLocalizacao(){
+		
+		document.addEventListener("deviceready", function () {
+			
+		var posOptions = {timeout: 10000, enableHighAccuracy: false};	
+	    $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
+		  var latlon = position.coords.latitude + "," + position.coords.longitude;
+		  var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+                +latlon+"&zoom=14&size=400x300&sensor=false";
+                document.getElementById("imgLocalizacao").innerHTML = "<img src='"+img_url+"'>";
+		}, function(err) {
+		  // error
+		});
+	  },false);
 	}
 	 
 	function vibrate() {
@@ -77,6 +92,11 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
     } 
 	$scope.foto = function(){
 		getFoto();
+       		
+	};
+	
+	$scope.localizar = function(){
+		getLocalizacao();
        		
 	};
 	 

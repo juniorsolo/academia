@@ -530,13 +530,19 @@
 		</div>    
 	   
 	</div>
-	<div class="app">
-	<div id="deviceready">
-	    <!--<button onclick="capturePhoto();">Capture Photo</button><br>-->
-		<button ng-click="foto();">Capture Photo</button><br>
-		<button>From Photo
-		Library</button><br>
-		<img id="minhaFoto" src="" style="display:none;width:250px;height:250px;text-align:center;">
+	<div class="Medidas">
+	<div id="deviceready" style="margin:auto; text-align:center;">
+	    <p>
+ 		   <img id="minhaFoto" src="" style="display:none;width:250px;height:250px;text-align:center;">
+		</p>
+		<div id="imgLocalizacao">
+		</div>
+	    <p>
+		   <button type="button" class="btn btn-info " ng-click="foto();">Tirar Foto</button><br>
+		</p>
+		<p>
+		   <button type="button" class="btn btn-info " ng-click="localizar();">Localizar</button><br>
+		</p>
 	</div>
 	</div>
     <div id="footer">
