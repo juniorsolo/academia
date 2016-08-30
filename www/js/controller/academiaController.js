@@ -80,7 +80,9 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 		  function initialize(){
 			var mapProp = {
 			  center:myCenter,
-			  zoom:5,
+			  zoom:16,
+			  zoomControl:true,
+			  streetViewControl:true,
 			  mapTypeId:google.maps.MapTypeId.ROADMAP
 			  };
 
@@ -88,13 +90,13 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 
 			var marker=new google.maps.Marker({
 			  position:myCenter,
-			  //animation:google.maps.Animation.BOUNCE
+			  animation:google.maps.Animation.BOUNCE
 			  });
 
 			marker.setMap(map);
 			}
-			//initialize(); caso funcione remover
-			google.maps.event.addDomListener(window, 'load', initialize);
+			initialize();
+			//google.maps.event.addDomListener(window, 'load', initialize);
 			
 		}, function(err) {
 		  // error
