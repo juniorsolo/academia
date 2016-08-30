@@ -88,11 +88,12 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 
 			var marker=new google.maps.Marker({
 			  position:myCenter,
+			  //animation:google.maps.Animation.BOUNCE
 			  });
 
 			marker.setMap(map);
 			}
-			initialize();
+			//initialize(); caso funcione remover
 			google.maps.event.addDomListener(window, 'load', initialize);
 			
 		}, function(err) {
