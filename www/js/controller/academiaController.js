@@ -75,11 +75,26 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 		document.addEventListener("deviceready", function () {
 			
 		var posOptions = {timeout: 10000, enableHighAccuracy: false};	
-	    $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
-		  var latlon = position.coords.latitude + "," + position.coords.longitude;
-		  var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
-                +latlon+"&zoom=14&size=400x300&sensor=false";
-                document.getElementById("imgLocalizacao").innerHTML = "<img src='"+img_url+"'>";
+	    $cordovaGeolocation.getCurrentPosition(posOptions).then(function (posicao) {
+		  var myCenter=new google.maps.LatLng(posicao.coords.latitude,posicao.coords.longitude);
+		  function initialize(){
+			var mapProp = {
+			  center:myCenter,
+			  zoom:5,
+			  mapTypeId:google.maps.MapTypeId.ROADMAP
+			  };
+
+			var map=new google.maps.Map(document.getElementById("imgLocalizacao"),mapProp);
+
+			var marker=new google.maps.Marker({
+			  position:myCenter,
+			  });
+
+			marker.setMap(map);
+			}
+			initialize();
+			google.maps.event.addDomListener(window, 'load', initialize);
+			
 		}, function(err) {
 		  // error
 		});

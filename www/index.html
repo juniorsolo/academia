@@ -8,7 +8,8 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/jqueryUI/jquery-ui.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD98GfJkckY_wSgOQ94AsEYdH9XZDURxrs"
+  type="text/javascript"></script>
 </head>
 <body ng-controller="academiaController">
 
@@ -535,7 +536,7 @@
 	    <p>
  		   <img id="minhaFoto" src="" style="display:none;width:250px;height:250px;text-align:center;">
 		</p>
-		<div id="imgLocalizacao">
+		<div id="imgLocalizacao" style="width:250px;height:180px;">
 		</div>
 	    <p>
 		   <button type="button" class="btn btn-info " ng-click="foto();">Tirar Foto</button><br>
