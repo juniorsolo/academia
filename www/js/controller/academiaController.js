@@ -35,7 +35,9 @@ angular.module("academiaApp").controller('academiaController', function($scope,$
 						{data: new Date(2016,07,13), treino:"DELTOIDE"},
 						{data: new Date(2016,07,14), treino:"PEITORAL,BICEPS"},
 						{data: new Date(2016,07,15), treino:"PERNAS"},
-						{data: new Date(2016,07,17), treino:"COSTAS, TRICEPS"}];				 
+						{data: new Date(2016,07,17), treino:"COSTAS, TRICEPS"}];
+    $scope.medidas = [{data: new Date(2016,07,1), peso: 79, altura: 1.65, escapular:108, torax: 100.5, cintura: 89, quadril:102.5, bracoD: 33, 
+	bracoDContr: 36, antiBracoD: 27, punhoD:16, bracoE:32, bracoEContr:36, antiBracoE: 27, punhoE: 16.5, coxaD: 56, coxaE: 56, gemeosD: 38.5, gemeosE: 39 }];						
 	$scope.treinosDoDia=[];
     $scope.dataGravarTreino = new Date();
 	$scope.categoriaSelecionada = "";

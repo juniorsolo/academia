@@ -532,22 +532,38 @@
 	   
 	</div>
 	<div class="Medidas">
-	<div id="deviceready" style="margin:auto; text-align:center;">
-	    <p>
- 		   <img id="minhaFoto" src="" style="display:none;width:250px;height:250px;text-align:center;">
-		</p>
-		<div id="imgLocalizacao" style="width:250px;height:180px;margin:auto;">
+	    <h4>Medidas Antropométricas</h4>
+		<div>
+		<table class="table">
+			<thead>
+			  <tr>
+				<th>Data</th>
+				<th>teste</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td style="vertical-align: bottom;">12/12/2012</td>
+				<td style="vertical-align: bottom;">12/12/2012</td>
+			  </tr>
+			</tbody>
+		  </table>
 		</div>
-	    <p>
-		   <button type="button" class="btn btn-info " ng-click="foto();">Tirar Foto</button><br>
-		</p>
-		<p>
-		   <button type="button" class="btn btn-info " ng-click="localizar();">Localizar</button><br>
-		</p>
 	</div>
-	</div>
-    <div id="footer">
-        
+    <div id="footer" class="ocultar">
+        <div id="deviceready" style="margin:auto; text-align:center;">
+			<p>
+			   <img id="minhaFoto" src="" style="display:none;width:250px;height:250px;text-align:center;">
+			</p>
+			<div id="imgLocalizacao" style="width:250px;height:180px;margin:auto;">
+			</div>
+			<p>
+			   <button type="button" class="btn btn-info " ng-click="foto();">Tirar Foto</button><br>
+			</p>
+			<p>
+			   <button type="button" class="btn btn-info " ng-click="localizar();">Localizar</button><br>
+			</p>
+	   </div>
     </div>
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery/jquery-2.2.3.min.js"></script>

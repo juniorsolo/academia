@@ -26,3 +26,9 @@ font-family:verdana;
 		margin-left:8%;
 		
 }
+
+.table-vertical{
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+}

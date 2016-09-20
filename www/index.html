@@ -531,23 +531,107 @@
 		</div>    
 	   
 	</div>
-	<div class="Medidas">
-	<div id="deviceready" style="margin:auto; text-align:center;">
-	    <p>
- 		   <img id="minhaFoto" src="" style="display:none;width:250px;height:250px;text-align:center;">
-		</p>
-		<div id="imgLocalizacao" style="width:250px;height:180px;margin:auto;">
+	<div class="Medidas">  
+		<div class="container">
+		    <div class="panel panel-info">
+			<div class="panel-heading"><h4 style="text-align:center;">Medidas Antropométricas</h4></div>
+			<div class="panel-body">
+				<table style="width:auto;margin:auto;" ng-repeat="medida in medidas" class="table table-striped">	
+					  <tr>
+						<th>Data</th>
+						<td>{{medida.data | diaMesAno}}</td>
+					  </tr>
+					  <tr>
+						<th>Peso</th>
+						<td>{{medida.peso}}</td>
+					  </tr>
+					  <tr>
+						<th>Altura</th>
+						<td>{{medida.altura}}</td>
+					  </tr>
+					  <tr>
+						<th>Escapular</th>
+						<td>{{medida.escapular}}</td>
+					  </tr>
+					  <tr>
+						<th>Tórax</th>
+						<td>{{medida.torax}}</td>
+					  </tr>
+					  <tr>
+						<th>Cintura</th>
+						<td>{{medida.cintura}}</td>
+					  </tr>
+					  <tr>
+						<th>Quadril</th>
+						<td>{{medida.quadril}}</td>
+					  </tr>
+					  <tr>
+						<th>Braço D.</th>
+						<td>{{medida.bracoD}}</td>
+					  </tr>
+					  <tr>
+						<th>Braço D. Contr</th>
+						<td>{{medida.bracoDContr}}</td>
+					  </tr>
+					  <tr>
+						<th>Anti Braço D.</th>
+						<td>{{medida.antiBracoD}}</td>
+					  </tr>
+					  <tr>
+						<th>Punho D.</th>
+						<td>{{medida.punhoD}}</td>
+					  </tr>
+					  <tr>
+						<th>Braço E.</th>
+						<td>{{medida.bracoE}}</td>
+					  </tr>
+					  <tr>
+						<th>Braço E. Contr</th>
+						<td>{{medida.bracoEContr}}</td>
+					  </tr>
+					  <tr>
+						<th>Anti Braço E.</th>
+						<td>{{medida.antiBracoE}}</td>
+					  </tr>
+					  <tr>
+						<th>Punho E.</th>
+						<td>{{medida.punhoE}}</td>
+					  </tr>
+					  <tr>
+						<th>Coxa D.</th>
+						<td>{{medida.coxaD}}</td>
+					  </tr>
+					  <tr>
+						<th>Coxa E.</th>
+						<td>{{medida.coxaE}}</td>
+					  </tr>
+					  <tr>
+						<th>Gêmeos D.</th>
+						<td>{{medida.gemeosD}}</td>
+					  </tr>
+					  <tr>
+						<th>Gêmeos E.</th>
+						<td>{{medida.gemeosE}}</td>
+					  </tr>
+				</table>
+			  </div>
+			</div>
 		</div>
-	    <p>
-		   <button type="button" class="btn btn-info " ng-click="foto();">Tirar Foto</button><br>
-		</p>
-		<p>
-		   <button type="button" class="btn btn-info " ng-click="localizar();">Localizar</button><br>
-		</p>
 	</div>
-	</div>
-    <div id="footer">
-        
+    <div id="footer" class="ocultar">
+        <div id="deviceready" style="margin:auto; text-align:center;">
+			<p>
+			   <img id="minhaFoto" src="" style="display:none;width:250px;height:250px;text-align:center;">
+			</p>
+			<div id="imgLocalizacao" style="width:250px;height:180px;margin:auto;">
+			</div>
+			<p>
+			   <button type="button" class="btn btn-info " ng-click="foto();">Tirar Foto</button><br>
+			</p>
+			<p>
+			   <button type="button" class="btn btn-info " ng-click="localizar();">Localizar</button><br>
+			</p>
+	   </div>
     </div>
 <!-- jQuery (necessario para os plugins Javascript Bootstrap) -->
 <script src="js/jquery/jquery-2.2.3.min.js"></script>
@@ -561,6 +645,8 @@
 <script src="js/module/app.js"></script>
 <script src="js/controller/academiaController.js"></script>
 <script src="js/filter/diaSemanaFilter.js"></script>
+<script src="js/filter/diaMesAnoFilter.js"></script>
+
 
 <!-- Importando cordova huhuhuahua-->
 <script src="js/cordova/ng-cordova.js"></script>
