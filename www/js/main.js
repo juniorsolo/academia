@@ -32,6 +32,13 @@ $(document).ready(function(){
 	   fechaMenu();
    });
    
+   //link do menu medidas
+   $("#menuMedidas").click(function(){
+	  fechaDivExceto(null);
+      $("#medidas").toggleClass('ocultar');
+      fechaMenu();	  
+   });
+   
    $(".efectShake").click(function(){
 	   $(this).effect("shake",800);
    });
@@ -49,6 +56,7 @@ $(document).ready(function(){
 	  $("#conteudoGravarTreino").addClass('ocultar');
 	  $("#conteudoSequenciaTreino").addClass('ocultar');
 	  $("#conteudoHistorico").addClass('ocultar');
+	  $('#medidas').addClass('ocultar');
 	  $(naoFechar).fadeIn('slow');
    };
  
