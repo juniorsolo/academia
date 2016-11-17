@@ -2,7 +2,7 @@
 <html ng-app="academiaApp">
 <head>
 <title>Academia Mobile</title>
- <meta charset="utf-8">
+ <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -63,38 +63,20 @@
 				<th>P3</th>
 			  </tr>
 			</thead>
-			<tbody>
+			<tbody ng-repeat=" exer in exercicios | filter:'BICEPS'">
 			  <tr>
-				<td>Rosca Concentrada</td>
-				<td>12</td>
-				<td>12kg</td>
-				<td>10</td>
-				<td>10kg</td>
-				<td>6</td>
-				<td>8kg</td>
-			  </tr>
-              <tr>
-				<td>Rosca Direta</td>
-				<td>12</td>
-				<td>12kg</td>
-				<td>10</td>
-				<td>10kg</td>
-				<td>6</td>
-				<td>8kg</td>
-			  </tr>
-              <tr>
-				<td>Rosca Alternada</td>
-				<td>Max</td>
-				<td>12kg</td>
-				<td>Max</td>
-				<td>10kg</td>
-				<td>Max</td>
-				<td>8kg</td>
-			  </tr>				  
+				<td>{{exer.nome}}</td>
+				<td>{{exer.treino[0].repeticao}}</td>
+				<td>{{exer.treino[0].peso}}</td>
+				<td>{{exer.treino[1].repeticao}}</td>
+				<td>{{exer.treino[1].peso}}</td>
+				<td>{{exer.treino[2].repeticao}}</td>
+				<td>{{exer.treino[2].peso}}</td>
+			  </tr>			  
 			</tbody>
 		  </table>
 		</div>
-		
+	
 		<div class="container ocultar" id="TRICEPS">
 		  <h4>Triceps</h4>
 		  <table class="table table-striped">
@@ -109,33 +91,15 @@
 				<th>P3</th>
 			  </tr>
 			</thead>
-			<tbody>
+			<tbody ng-repeat= "exer in exercicios | filter:'TRICEPS' ">
 			  <tr>
-				<td>Pulley</td>
-				<td>12</td>
-				<td>12kg</td>
-				<td>12</td>
-				<td>10kg</td>
-				<td>12</td>
-				<td>8kg</td>
-			  </tr>
-              <tr>
-				<td>Pulley Sup.</td>
-				<td>12</td>
-				<td>12kg</td>
-				<td>10</td>
-				<td>10kg</td>
-				<td>6</td>
-				<td>8kg</td>
-			  </tr>
-              <tr>
-				<td>Pulley corda</td>
-				<td>10</td>
-				<td>20kg</td>
-				<td>10</td>
-				<td>15kg</td>
-				<td>10</td>
-				<td>15kg</td>
+				<td>{{exer.nome}}</td>
+				<td>{{exer.treino[0].repeticao}}</td>
+				<td>{{exer.treino[0].peso}}</td>
+				<td>{{exer.treino[1].repeticao}}</td>
+				<td>{{exer.treino[1].peso}}</td>
+				<td>{{exer.treino[2].repeticao}}</td>
+				<td>{{exer.treino[2].peso}}</td>
 			  </tr>				  
 			</tbody>
 		  </table>
@@ -154,42 +118,15 @@
 				<th>P3</th>
 			  </tr>
 			</thead>
-			<tbody>
+			<tbody ng-repeat = "exer in exercicios | filter:'COSTAS'">
 			  <tr>
-				<td>Pulley Frontal</td>
-				<td>10</td>
-				<td>25kg</td>
-				<td>10</td>
-				<td>30kg</td>
-				<td>10</td>
-				<td>35kg</td>
-			  </tr>
-              <tr>
-				<td>Remada Fech.</td>
-				<td>15</td>
-				<td>15kg</td>
-				<td>15</td>
-				<td>20kg</td>
-				<td>15</td>
-				<td>25kg</td>
-			  </tr>
-              <tr>
-				<td>Cavalo</td>
-				<td>10</td>
-				<td>15kg</td>
-				<td>10</td>
-				<td>20kg</td>
-				<td>10</td>
-				<td>25kg</td>
-			  </tr>
-              <tr>
-				<td>Pundow</td>
-				<td>10</td>
-				<td>15kg</td>
-				<td>10</td>
-				<td>20kg</td>
-				<td>10</td>
-				<td>20kg</td>
+				<td>{{exer.nome}}</td>
+				<td>{{exer.treino[0].repeticao}}</td>
+				<td>{{exer.treino[0].peso}}</td>
+				<td>{{exer.treino[1].repeticao}}</td>
+				<td>{{exer.treino[1].peso}}</td>
+				<td>{{exer.treino[2].repeticao}}</td>
+				<td>{{exer.treino[2].peso}}</td>
 			  </tr>			  
 			</tbody>
 		  </table>
@@ -209,43 +146,16 @@
 				<th>P3</th>
 			  </tr>
 			</thead>
-			<tbody>
+			<tbody ng-repeat = "exer in exercicios | filter:'PEITORAL'">
 			  <tr>
-				<td>Supino Reto</td>
-				<td>12</td>
-				<td>20kg</td>
-				<td>10</td>
-				<td>25kg</td>
-				<td>6</td>
-				<td>30kg</td>
-			  </tr>
-              <tr>
-				<td>supino inclinado</td>
-				<td>12</td>
-				<td>12kg</td>
-				<td>10</td>
-				<td>10kg</td>
-				<td>6</td>
-				<td>8kg</td>
-			  </tr>
-              <tr>
-				<td>Cruxifixo inclinado</td>
-				<td>10</td>
-				<td>8kg</td>
-				<td>10</td>
-				<td>10kg</td>
-				<td>10</td>
-				<td>12kg</td>
-			  </tr>
-              <tr>
-				<td>Supino Declinado</td>
-				<td>8</td>
-				<td>15kg</td>
-				<td>8</td>
-				<td>20kg</td>
-				<td>8</td>
-				<td>25kg</td>
-			  </tr>				  
+				<td>{{exer.nome}}</td>
+				<td>{{exer.treino[0].repeticao}}</td>
+				<td>{{exer.treino[0].peso}}</td>
+				<td>{{exer.treino[1].repeticao}}</td>
+				<td>{{exer.treino[1].peso}}</td>
+				<td>{{exer.treino[2].repeticao}}</td>
+				<td>{{exer.treino[2].peso}}</td>
+			  </tr>		  
 			</tbody>
 		  </table>
 		</div>
@@ -263,61 +173,16 @@
 				<th>P3</th>
 			  </tr>
 			</thead>
-			<tbody>
-			  <tr>
-				<td>Legg Press</td>
-				<td>24</td>
-				<td>80kg</td>
-				<td>24</td>
-				<td>100kg</td>
-				<td>24</td>
-				<td>100kg</td>
-			  </tr>
-              <tr>
-				<td>Avanço</td>
-				<td>10</td>
-				<td>20kg</td>
-				<td>10</td>
-				<td>20kg</td>
-				<td>10</td>
-				<td>20kg</td>
-			  </tr>
-              <tr>
-				<td>Cadeira Extensora</td>
-				<td>Max</td>
-				<td>15kg</td>
-				<td>Max</td>
-				<td>20kg</td>
-				<td>Max</td>
-				<td>20kg</td>
-			  </tr>
-              <tr>
-				<td>Cadeira Flexora</td>
-				<td>12</td>
-				<td>15kg</td>
-				<td>12</td>
-				<td>20kg</td>
-				<td>12</td>
-				<td>20kg</td>
-			  </tr>
-              <tr>
-				<td>Cadeira Adutora</td>
-				<td>Max</td>
-				<td>30kg</td>
-				<td>Max</td>
-				<td>40kg</td>
-				<td>Max</td>
-				<td>40kg</td>
-			  </tr>
-              <tr>
-				<td>Cadeira Abdutora</td>
-				<td>Max</td>
-				<td>30kg</td>
-				<td>Max</td>
-				<td>40kg</td>
-				<td>Max</td>
-				<td>40kg</td>
-			  </tr>			  
+			<tbody ng-repeat = "exer in exercicios | filter:'PERNAS'">
+			   <tr>
+				<td>{{exer.nome}}</td>
+				<td>{{exer.treino[0].repeticao}}</td>
+				<td>{{exer.treino[0].peso}}</td>
+				<td>{{exer.treino[1].repeticao}}</td>
+				<td>{{exer.treino[1].peso}}</td>
+				<td>{{exer.treino[2].repeticao}}</td>
+				<td>{{exer.treino[2].peso}}</td>
+			   </tr>				  
 			</tbody>
 		  </table>
 		</div>
@@ -335,52 +200,16 @@
 				<th>P3</th>
 			  </tr>
 			</thead>
-			<tbody>
-			  <tr>
-				<td>Desenvol. Frontal</td>
-				<td>10</td>
-				<td>8kg</td>
-				<td>10</td>
-				<td>10kg</td>
-				<td>10</td>
-				<td>10kg</td>
-			  </tr>
-              <tr>
-				<td>Arnold Press. + Desenv.</td>
-				<td>10</td>
-				<td>8kg</td>
-				<td>10</td>
-				<td>10kg</td>
-				<td>10</td>
-				<td>10kg</td>
-			  </tr>
-              <tr>
-				<td>Elevação Frontal</td>
-				<td>10</td>
-				<td>8kg</td>
-				<td>10</td>
-				<td>8kg</td>
-				<td>10</td>
-				<td>10kg</td>
-			  </tr>
-              <tr>
-				<td>Elevação Lateral</td>
-				<td>10</td>
-				<td>8kg</td>
-				<td>10</td>
-				<td>8kg</td>
-				<td>10</td>
-				<td>10kg</td>
-			  </tr>
-              <tr>
-				<td>Elevação Posterior</td>
-				<td>10</td>
-				<td>8kg</td>
-				<td>10</td>
-				<td>8kg</td>
-				<td>10</td>
-				<td>10kg</td>
-			  </tr>			  
+			<tbody ng-repeat = "exer in exercicios | filter:'DELTOIDE'">
+			 <tr>
+				<td>{{exer.nome}}</td>
+				<td>{{exer.treino[0].repeticao}}</td>
+				<td>{{exer.treino[0].peso}}</td>
+				<td>{{exer.treino[1].repeticao}}</td>
+				<td>{{exer.treino[1].peso}}</td>
+				<td>{{exer.treino[2].repeticao}}</td>
+				<td>{{exer.treino[2].peso}}</td>
+			   </tr>  
 			</tbody>
 		  </table>
 		</div>
@@ -399,16 +228,16 @@
 				<th>P3</th>
 			  </tr>
 			</thead>
-			<tbody>
+			<tbody ng-repeat = "exer in exercicios | filter:'TRAPEZIO'">
 			  <tr>
-				<td>Remada Alta</td>
-				<td>10</td>
-				<td>20kg</td>
-				<td>10</td>
-				<td>20kg</td>
-				<td>10</td>
-				<td>25kg</td>
-			  </tr>        		  
+				<td>{{exer.nome}}</td>
+				<td>{{exer.treino[0].repeticao}}</td>
+				<td>{{exer.treino[0].peso}}</td>
+				<td>{{exer.treino[1].repeticao}}</td>
+				<td>{{exer.treino[1].peso}}</td>
+				<td>{{exer.treino[2].repeticao}}</td>
+				<td>{{exer.treino[2].peso}}</td>
+			   </tr>      		  
 			</tbody>
 		  </table>
 		</div>
@@ -523,7 +352,7 @@
 			</thead>
 			<tbody>
 			  <tr ng-repeat="h in historico | orderBy: 'h.data':true">
-				<td>{{h.data.getDate()}}/{{h.data.getMonth() +1 }}/{{h.data.getFullYear()}}</td>
+				<td>{{ h.data | diaMesAno }}</td>
 				<td>{{h.data.getDay() | diaSemanaFilter}}</td>
 				<td>{{h.treino}}</td>
 			  </tr>
@@ -532,10 +361,14 @@
 		</div>    
 	   
 	</div>
-	<div id="medidas" class="ocultar">  
+	<div id="medidas" >
+	    <div style="margin:auto;">
+		        <img id="minhaFoto" src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png" style="display:none;text-align:center;">
+		</div>  
 		<div class="container">
 		    <div class="panel panel-info">
 			<div class="panel-heading"><h4 style="text-align:center;">Medidas Antropométricas</h4></div>
+			
 			<div class="panel-body">
 				<table style="width:auto;margin:auto;" ng-repeat="medida in medidas" class="table table-striped">	
 					  <tr>
