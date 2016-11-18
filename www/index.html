@@ -49,197 +49,33 @@
 		</nav>    
 	</div>
 	<div id="conteudoExercicio">
+
 	    <div class="container ocultar" id="BICEPS">
-		  <h4>Bicéps</h4>
-		  <table class="table table-striped">
-			<thead>
-			  <tr>
-				<th>Exercicio</th>
-				<th>R1</th>
-				<th>P1</th>
-				<th>R2</th>
-				<th>P2</th>
-				<th>R3</th>
-				<th>P3</th>
-			  </tr>
-			</thead>
-			<tbody ng-repeat=" exer in exercicios | filter:'BICEPS'">
-			  <tr>
-				<td>{{exer.nome}}</td>
-				<td>{{exer.treino[0].repeticao}}</td>
-				<td>{{exer.treino[0].peso}}</td>
-				<td>{{exer.treino[1].repeticao}}</td>
-				<td>{{exer.treino[1].peso}}</td>
-				<td>{{exer.treino[2].repeticao}}</td>
-				<td>{{exer.treino[2].peso}}</td>
-			  </tr>			  
-			</tbody>
-		  </table>
+		    <div ng-include=" 'pages/exercicios/biceps.html' "></div>
 		</div>
 	
 		<div class="container ocultar" id="TRICEPS">
-		  <h4>Triceps</h4>
-		  <table class="table table-striped">
-			<thead>
-			  <tr>
-				<th>Exercicio</th>
-				<th>R1</th>
-				<th>P1</th>
-				<th>R2</th>
-				<th>P2</th>
-				<th>R3</th>
-				<th>P3</th>
-			  </tr>
-			</thead>
-			<tbody ng-repeat= "exer in exercicios | filter:'TRICEPS' ">
-			  <tr>
-				<td>{{exer.nome}}</td>
-				<td>{{exer.treino[0].repeticao}}</td>
-				<td>{{exer.treino[0].peso}}</td>
-				<td>{{exer.treino[1].repeticao}}</td>
-				<td>{{exer.treino[1].peso}}</td>
-				<td>{{exer.treino[2].repeticao}}</td>
-				<td>{{exer.treino[2].peso}}</td>
-			  </tr>				  
-			</tbody>
-		  </table>
-		</div>		
+		    <div ng-include = " 'pages/exercicios/triceps.html' "></div>
+		</div>
+
 		<div class="container ocultar" id="COSTAS">
-		  <h4>Costas</h4>
-		  <table class="table table-striped">
-			<thead>
-			  <tr>
-				<th>Exercicio</th>
-				<th>R1</th>
-				<th>P1</th>
-				<th>R2</th>
-				<th>P2</th>
-				<th>R3</th>
-				<th>P3</th>
-			  </tr>
-			</thead>
-			<tbody ng-repeat = "exer in exercicios | filter:'COSTAS'">
-			  <tr>
-				<td>{{exer.nome}}</td>
-				<td>{{exer.treino[0].repeticao}}</td>
-				<td>{{exer.treino[0].peso}}</td>
-				<td>{{exer.treino[1].repeticao}}</td>
-				<td>{{exer.treino[1].peso}}</td>
-				<td>{{exer.treino[2].repeticao}}</td>
-				<td>{{exer.treino[2].peso}}</td>
-			  </tr>			  
-			</tbody>
-		  </table>
+		    <div ng-include = " 'pages/exercicios/costas.html' "></div>
 		</div>
 		
 		<div class="container ocultar" id="PEITORAL">
-		  <h4>Peitoral</h4>
-		  <table class="table table-striped">
-			<thead>
-			  <tr>
-				<th>Exercicio</th>
-				<th>R1</th>
-				<th>P1</th>
-				<th>R2</th>
-				<th>P2</th>
-				<th>R3</th>
-				<th>P3</th>
-			  </tr>
-			</thead>
-			<tbody ng-repeat = "exer in exercicios | filter:'PEITORAL'">
-			  <tr>
-				<td>{{exer.nome}}</td>
-				<td>{{exer.treino[0].repeticao}}</td>
-				<td>{{exer.treino[0].peso}}</td>
-				<td>{{exer.treino[1].repeticao}}</td>
-				<td>{{exer.treino[1].peso}}</td>
-				<td>{{exer.treino[2].repeticao}}</td>
-				<td>{{exer.treino[2].peso}}</td>
-			  </tr>		  
-			</tbody>
-		  </table>
+		    <div ng-include = " 'pages/exercicios/peitoral.html' "></div>
 		</div>
+
 		<div class="container ocultar" id="PERNAS">
-		  <h4>Pernas</h4>
-		  <table class="table table-striped">
-			<thead>
-			  <tr>
-				<th>Exercicio</th>
-				<th>R1</th>
-				<th>P1</th>
-				<th>R2</th>
-				<th>P2</th>
-				<th>R3</th>
-				<th>P3</th>
-			  </tr>
-			</thead>
-			<tbody ng-repeat = "exer in exercicios | filter:'PERNAS'">
-			   <tr>
-				<td>{{exer.nome}}</td>
-				<td>{{exer.treino[0].repeticao}}</td>
-				<td>{{exer.treino[0].peso}}</td>
-				<td>{{exer.treino[1].repeticao}}</td>
-				<td>{{exer.treino[1].peso}}</td>
-				<td>{{exer.treino[2].repeticao}}</td>
-				<td>{{exer.treino[2].peso}}</td>
-			   </tr>				  
-			</tbody>
-		  </table>
+		    <div ng-include = " 'pages/exercicios/pernas.html' "></div>
 		</div>
+
 		<div class="container ocultar" id="DELTOIDE">
-		  <h4>Deltoide</h4>
-		  <table class="table table-striped">
-			<thead>
-			  <tr>
-				<th>Exercicio</th>
-				<th>R1</th>
-				<th>P1</th>
-				<th>R2</th>
-				<th>P2</th>
-				<th>R3</th>
-				<th>P3</th>
-			  </tr>
-			</thead>
-			<tbody ng-repeat = "exer in exercicios | filter:'DELTOIDE'">
-			 <tr>
-				<td>{{exer.nome}}</td>
-				<td>{{exer.treino[0].repeticao}}</td>
-				<td>{{exer.treino[0].peso}}</td>
-				<td>{{exer.treino[1].repeticao}}</td>
-				<td>{{exer.treino[1].peso}}</td>
-				<td>{{exer.treino[2].repeticao}}</td>
-				<td>{{exer.treino[2].peso}}</td>
-			   </tr>  
-			</tbody>
-		  </table>
+		    <div ng-include = " 'pages/exercicios/deltoide.html' "></div>
 		</div>
 		
 		<div class="container ocultar" id="TRAPEZIO">
-		  <h4>Trapezio</h4>
-		  <table class="table table-striped">
-			<thead>
-			  <tr>
-				<th>Exercicio</th>
-				<th>R1</th>
-				<th>P1</th>
-				<th>R2</th>
-				<th>P2</th>
-				<th>R3</th>
-				<th>P3</th>
-			  </tr>
-			</thead>
-			<tbody ng-repeat = "exer in exercicios | filter:'TRAPEZIO'">
-			  <tr>
-				<td>{{exer.nome}}</td>
-				<td>{{exer.treino[0].repeticao}}</td>
-				<td>{{exer.treino[0].peso}}</td>
-				<td>{{exer.treino[1].repeticao}}</td>
-				<td>{{exer.treino[1].peso}}</td>
-				<td>{{exer.treino[2].repeticao}}</td>
-				<td>{{exer.treino[2].peso}}</td>
-			   </tr>      		  
-			</tbody>
-		  </table>
+		    <div ng-include = " 'pages/exercicios/trapezio.html' "></div>
 		</div>
 		
 		<div class="container ocultar" id="GLUTEO">
@@ -264,10 +100,9 @@
 						  <li class="list-group-item list-group-item-info" style="float:left;clear:top;margin:1%;" ng-click="removerTreino(treino)">{{treino}}</li>
 					</ul>
                 </div>				
-			   <!--<div ng-include="'teste.html'"></div>-->
 			   <div>
 				   <select ng-model="categoriaSelecionada" class="form-control">
-					  <option ng-repeat="categoria in categorias" value="{{categoria}}">{{categoria}}</options>
+					  <option ng-repeat="categoria in categorias" value="{{categoria}}">{{categoria}}</option>
 				   </select>
 			   </div>
                <div style="text-align:center">

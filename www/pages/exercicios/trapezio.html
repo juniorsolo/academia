@@ -1,0 +1,25 @@
+<h4>Trapezio</h4>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Exercicio</th>
+			<th>R1</th>
+			<th>P1</th>
+			<th>R2</th>
+			<th>P2</th>
+			<th>R3</th>
+			<th>P3</th>
+		</tr>
+	</thead>
+	<tbody ng-repeat = "exer in exercicios | filter:'TRAPEZIO'">
+		<tr>
+			<td>{{exer.nome}}</td>
+			<td>{{exer.treino[0].repeticao}}</td>
+			<td>{{exer.treino[0].peso}}</td>
+			<td>{{exer.treino[1].repeticao}}</td>
+			<td>{{exer.treino[1].peso}}</td>
+			<td>{{exer.treino[2].repeticao}}</td>
+			<td>{{exer.treino[2].peso}}</td>
+		</tr>      		  
+	</tbody>
+</table>
