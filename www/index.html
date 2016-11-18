@@ -134,43 +134,42 @@
         
     </div>	
 	<div id="conteudoSequenciaTreino" class="ocultar">
-	   <div class="container">
-	     <h4 class="alert alert-info">Você deverá seguir a sequência de treino abaixo:</h3>
-		 <h4 style="text-align:center;" class="alert alert-info"><strong>A - B - C - D</strong></h4>
-		 <table class="table">
-		 <tr>
-		  
-		  <td>
-			  <div class="list-group efectShake" style="width:auto;text-align:center;">
-				<a href="#" class="list-group-item active">A</a>
-				<a href="#" class="list-group-item">Peito</a>
-				<a href="#" class="list-group-item">Tríceps</a>
-			  </div>
-		  </td>
-		  <td>
-			  <div class="list-group efectShake" style="width:auto;text-align:center;">
-				<a href="#" class="list-group-item active">B</a>
-				<a href="#" class="list-group-item">Perna</a>
-			  </div>
-		  </td>
-		  </tr>
-		  <tr>
-		  <td>
-			  <div class="list-group efectShake" style="width:auto;text-align:center;">
-				<a href="#" class="list-group-item active">C</a>
-				<a href="#" class="list-group-item">Costas</a>
-				<a href="#" class="list-group-item">Bíceps</a>
-			  </div>
-		  </td>
-		  <td>
-			  <div class="list-group efectShake" style="width:auto;text-align:center;">
-				<a href="#" class="list-group-item active">D</a>
-				<a href="#" class="list-group-item">Deltoide</a>
-				<a href="#" class="list-group-item">Abdomem</a>
-			  </div>
-		  </td>
-		 </tr> 
-		 </table> 	  
+	    <div class="container">
+			<h4 class="alert alert-info">Você deverá seguir a sequência de treino abaixo:</h4>
+			<h4 style="text-align:center;" class="alert alert-info"><strong>A - B - C - D</strong></h4>
+			<table class="table">
+			    <tr>	  
+				    <td>
+					    <div class="list-group efectShake" style="width:auto;text-align:center;">
+						    <a href="#" class="list-group-item active">A</a>
+						    <a href="#" class="list-group-item">Peito</a>
+						    <a href="#" class="list-group-item">Tríceps</a>
+					    </div>
+				    </td>
+				    <td>
+					    <div class="list-group efectShake" style="width:auto;text-align:center;">
+						    <a href="#" class="list-group-item active">B</a>
+						    <a href="#" class="list-group-item">Perna</a>
+					    </div>
+				    </td>
+				</tr>
+				<tr>
+				    <td>
+					    <div class="list-group efectShake" style="width:auto;text-align:center;">
+						    <a href="#" class="list-group-item active">C</a>
+						    <a href="#" class="list-group-item">Costas</a>
+						    <a href="#" class="list-group-item">Bíceps</a>
+					    </div>
+				    </td>
+				    <td>
+					    <div class="list-group efectShake" style="width:auto;text-align:center;">
+						    <a href="#" class="list-group-item active">D</a>
+						    <a href="#" class="list-group-item">Deltoide</a>
+						    <a href="#" class="list-group-item">Abdomem</a>
+					    </div>
+				    </td>
+				</tr> 
+			</table> 	  
 		</div> 
     </div>		
 	
@@ -197,95 +196,7 @@
 	   
 	</div>
 	<div id="medidas" >
-	    <div style="margin:auto;">
-		        <img id="minhaFoto" src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png" style="display:none;text-align:center;">
-		</div>  
-		<div class="container">
-		    <div class="panel panel-info">
-			<div class="panel-heading"><h4 style="text-align:center;">Medidas Antropométricas</h4></div>
-			
-			<div class="panel-body">
-				<table style="width:auto;margin:auto;" ng-repeat="medida in medidas" class="table table-striped">	
-					  <tr>
-						<th>Data</th>
-						<td>{{medida.data | diaMesAno}}</td>
-					  </tr>
-					  <tr>
-						<th>Peso</th>
-						<td>{{medida.peso}}</td>
-					  </tr>
-					  <tr>
-						<th>Altura</th>
-						<td>{{medida.altura}}</td>
-					  </tr>
-					  <tr>
-						<th>Escapular</th>
-						<td>{{medida.escapular}}</td>
-					  </tr>
-					  <tr>
-						<th>Tórax</th>
-						<td>{{medida.torax}}</td>
-					  </tr>
-					  <tr>
-						<th>Cintura</th>
-						<td>{{medida.cintura}}</td>
-					  </tr>
-					  <tr>
-						<th>Quadril</th>
-						<td>{{medida.quadril}}</td>
-					  </tr>
-					  <tr>
-						<th>Braço D.</th>
-						<td>{{medida.bracoD}}</td>
-					  </tr>
-					  <tr>
-						<th>Braço D. Contr</th>
-						<td>{{medida.bracoDContr}}</td>
-					  </tr>
-					  <tr>
-						<th>Anti Braço D.</th>
-						<td>{{medida.antiBracoD}}</td>
-					  </tr>
-					  <tr>
-						<th>Punho D.</th>
-						<td>{{medida.punhoD}}</td>
-					  </tr>
-					  <tr>
-						<th>Braço E.</th>
-						<td>{{medida.bracoE}}</td>
-					  </tr>
-					  <tr>
-						<th>Braço E. Contr</th>
-						<td>{{medida.bracoEContr}}</td>
-					  </tr>
-					  <tr>
-						<th>Anti Braço E.</th>
-						<td>{{medida.antiBracoE}}</td>
-					  </tr>
-					  <tr>
-						<th>Punho E.</th>
-						<td>{{medida.punhoE}}</td>
-					  </tr>
-					  <tr>
-						<th>Coxa D.</th>
-						<td>{{medida.coxaD}}</td>
-					  </tr>
-					  <tr>
-						<th>Coxa E.</th>
-						<td>{{medida.coxaE}}</td>
-					  </tr>
-					  <tr>
-						<th>Gêmeos D.</th>
-						<td>{{medida.gemeosD}}</td>
-					  </tr>
-					  <tr>
-						<th>Gêmeos E.</th>
-						<td>{{medida.gemeosE}}</td>
-					  </tr>
-				</table>
-			  </div>
-			</div>
-		</div>
+	    <div ng-include = " 'pages/medidas/medidas.html' "></div>
 	</div>
     <div id="footer" class="ocultar">
         <div id="deviceready" style="margin:auto; text-align:center;">
