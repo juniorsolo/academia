@@ -32,3 +32,27 @@ font-family:verdana;
     padding: 5px;
     text-align: left;
 }
+
+@media screen and (min-width: 768px) {
+    .exibirExercicio {
+        margin-bottom:2%;
+        margin-left:8%;   
+    }
+    ul {
+       list-style-position: outside;
+       list-style-type: circle;
+    }
+    .menuTablet {
+      max-width: 132px;   
+    }
+    .subMenuExercicios {
+        margin-bottom: 4%;
+        max-width: 25%;
+        max-height: 80%;
+
+    }
+    .headerMenu{
+        float:left;
+
+    }
+}
